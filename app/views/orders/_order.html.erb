@@ -1,0 +1,37 @@
+<div class="show">
+	<%=will_paginate @orders%>
+<%@orders.each do |order| %>
+
+<%#= link_to 'Edit', edit_order_path(@order) %>
+<%#= link_to 'Back', orders_path %>
+<table>
+  <caption>
+    <b><%= order.topic %>:</b><b>[<%= link_to 'Show More Details', order %>]</b>
+</caption>
+<tr>
+<th> Deadline:</th>
+<th><%= order.urgency %></th>
+<th>Time remaining</th>
+<th></th>
+</tr>
+<tr>
+<td>PaperID:</td>
+<td>#0412<%=order.id%>90</td>
+<td>No of Pages</td>
+<td><%=order.pages%></td>
+</tr>
+<tr>
+<td>Order type:</td>
+<td><%=order.documenttype%></td>
+<td>Sources</td>
+<td><%=order.references%></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<% end %>
+</div>

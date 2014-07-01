@@ -1,0 +1,62 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div id="contact">
+  <div class="tableRow">
+ <span> <%= f.label "Topic"%></span>
+  <span><%= f.text_field :topic, :placeholder=>"Creative Writing" %></span>
+</div>
+<div class="tableRow">
+  <span><%= f.label "Subject Area"%></span>
+  <span><%= f.select :subject, Order::Subject_Type,
+                        :prompt=>"Select a Topic" %></span>
+</div>
+<div class="tableRow">
+  <span><%= f.label "Type of Document"%></span>
+  </span><%= f.select :documenttype, Order::Document_Type,
+                        :prompt=>"Select type of Paper" %></span>
+</div>
+<div class="tableRow">
+  <span><%= f.label "Number of Pages" %></span>
+   <span> <%= f.number_field :pages, :min=>"1", :value=>"1", :max=>"200", :placeholder=>"1 page/Approx 275 Words" %>Pages</span>
+ </div>
+  <div class="tableRow">
+  <span><%= f.label "Urgency" %></span>
+    <span><%= f.select :urgency, Order::Urgency, 
+                        :prompt=>"Select Paper Urgency"%></span>
+</div>
+<div class="tableRow">
+ <span><%= f.label "Number of References"%></span>
+  <span><%= f.number_field :references, :min=>"0", :value=>"0"%></span>
+  </div>
+  <div class="tableRow">
+ <span><%= f.label :citation %></span>
+    <span><%= f.select :citation, Order::Citation_Style,
+                       :prompt=>"Select Citation Style"%></span>
+  </div>
+  <div class="tableRow">
+ <span><%= f.label :level %></span>
+  <span><%= f.select :level, Order::Academic_Level, :prompt=>"Select Academic Level"%></span>
+</div>
+  <div class="tableRow">
+ <span><%= f.label :language %></span>
+    <span><%= f.select :language, Order::Preffered_Language, :prompt=>"Select Language of Preference" %></span>
+  </div>
+<div class="tableRow">
+ <span><%= f.label :instructions %></span>
+      <span><%= f.text_area :instructions, :placeholder=>"Type Order Instructions" %></span>
+    </div>
+  <div class="tableRow">
+ <span><%= f.submit "Order Now", :class=>"btn btn-large btn-primary"%></span>
+</div>
+<% end %>
+</div>

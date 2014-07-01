@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  topic: MyString
+  subject: MyString
+  documenttype: MyString
+  pages: 1
+  urgency: 2014-06-07 10:05:23
+  references: 1
+  citation: MyString
+  level: MyString
+  language: MyString
+  instructions: MyString
+
+two:
+  topic: MyString
+  subject: MyString
+  documenttype: MyString
+  pages: 1
+  urgency: 2014-06-07 10:05:23
+  references: 1
+  citation: MyString
+  level: MyString
+  language: MyString
+  instructions: MyString

@@ -1,0 +1,56 @@
+<% if flash[:notice] %>
+<p id="notice"><%= flash[:notice] %></p>
+ <% end %>
+
+<%#= link_to 'Edit', edit_order_path(@order) %> 
+<%#= link_to 'Back', orders_path %>
+<div class="show">
+<table>
+  <caption>
+    <%= @order.topic %>
+</caption>
+<tr>
+<th> Deadline:</th>
+<th><%= @order.urgency %></th>
+<th>Time remaining</th>
+<th></th>
+</tr>
+<tr>
+<td>PaperID:</td>
+<td>#0412<%=@order.id%>90</td>
+<td>Pages</td>
+<td><%=@order.pages%></td>
+</tr>
+<tr>
+<td>Order type:</td>
+<td><%=@order.documenttype%></td>
+<td>Sources</td>
+<td><%=@order.references%></td>
+</tr>
+<tr>
+<td>Style:</td>
+<td><%= @order.citation %></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Language:</td>
+<td><%= @order.language %></td>
+<td>Total Cost:</td>
+<td>$<%=@total_price%></td>
+</tr>
+<tr>
+<td>Instructions</td>
+<td rowspan="4"><%= @order.instructions %> </td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td rowspan="2"><%= link_to "Buy With PayPal", @order.paypal_url(@order, payment_notifications_url)%> </td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</div>

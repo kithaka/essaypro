@@ -1,0 +1,10 @@
+<!--
+<p id="notice"><%= notice %></p>
+-->
+    <%if @customer.orders.any? %>
+    <h3>Orders (<%=@customer.orders.count %>)</h3>
+      <%= render @orders %>
+      
+    <% end %>
+<%#= link_to 'Edit', edit_customer_path(@customer) %> 
+<%#= link_to 'Back', customers_path %>
