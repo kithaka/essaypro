@@ -1,17 +1,13 @@
 <div class="account">
 <% if signed_in? %>
-
-	<ul>
-        <h1>Account/Orders</h1>
+<h1>Account/Orders</h1>
 <ul>
     <li>Welcome: <%=current_user.firstname%></li>
     <li><%= link_to "My Orders", current_user%></li>
-                <li><%= link_to "Profile", edit_customer_path(current_user)%></li>
-                <li><%= link_to "Sign out", signout_path, :method=> "delete" %></li>
+    <li><%= link_to "Profile", edit_customer_path(current_user)%></li>
+    <li><%= link_to "Sign out", signout_path, :method=> "delete" %></li>
                 <%# else %>
             <%#= link_to "Sign in", signin_path %>
-            </ul>
-        </li>
     </ul>
 <% end %>
 </div>
