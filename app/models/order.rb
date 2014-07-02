@@ -29,8 +29,8 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
     :business=>"ptztom@gmail.com",
     :cmd=>"_cart", #had used a cart without underscore
     :upload=>1,
-    :return =>current_user_path,
-    :invoice=>id,
+    :return =>return_url,
+    #:invoice=>@order.id,
     :notify_url=>notify_url
   }
   values.merge!({
