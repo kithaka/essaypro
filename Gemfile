@@ -6,6 +6,8 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'#allows will_paginate to use Bootstrap pagination
 gem 'bcrypt-ruby'  # To use ActiveModel has_secure_password
 gem 'carrierwave' #manages uploads
+gem 'sprockets'
+gem 'sprockets-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -31,7 +33,7 @@ gem 'jquery-rails'
 
  group :production do
   gem 'pg'
-  gem 'rails_12factor'
+  #gem 'rails_12factor'
 end
 
 # To use Jbuilder templates for JSON
