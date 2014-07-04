@@ -15,7 +15,9 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+
     @order=Order.find(params[:id])
+    @uploadfile=@order.uploadfiles.new
     calculator @order
     @orders=current_user.orders.paginate(page: params[:page])
     respond_to do |format|

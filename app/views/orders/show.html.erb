@@ -48,13 +48,18 @@
 <tr>
 <td></td>
 <td></td>
-<% if @order.purchased_at %>
-    <li> Processing</li>
-    <% else%>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<% unless @order.purchased_at %>
 <td rowspan="2"><%= link_to "Buy With PayPal", @order.paypal_url(order_url, payment_notifications_url)%> </td>
 <% end %>
 <td></td>
 <td></td>
 </tr>
 </table>
+</div>
+<div class="uploads">
+<%= render :file => 'uploadfiles/new' %>
 </div>

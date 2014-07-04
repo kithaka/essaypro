@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :urgency, :price
   belongs_to :customer
   has_many :payment_notifications
+  has_many :uploadfiles
   validates :citation, :documenttype, :presence=>true
   default_scope :order=>'orders.created_at DESC'
 Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Movies", "Music", "Paintings", "Theatre", "Biology", 

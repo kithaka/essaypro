@@ -1,0 +1,19 @@
+<% if !@uploadfile.errors.empty? %>
+  <div class="alert alert-error">
+    <ul>
+      <% @uploadfile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>  
+<%= form_for([@order, @order.uploadfiles.new]) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name%>
+    <%= f.label :attachment %>
+    <%= f.file_field :attachment %>
+    <%= f.submit "Upload", class: "btn btn-primary" %>
+  <% end %>
+
+
+  
