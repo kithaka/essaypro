@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
-  before_filter :signed_in_user, :only=>[:create]
+  before_filter :signed_in_user, :only=>[ :index, :create, :new]
+  
   def index
     #@orders = Order.all
     @orders = Order.paginate :page=>params[:page], :order=>'created_at desc',

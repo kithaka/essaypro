@@ -3,6 +3,8 @@ class Order < ActiveRecord::Base
   belongs_to :customer
   has_many :payment_notifications
   has_many :uploadfiles
+  has_many :messages
+  has_many :states
   validates :citation, :documenttype, :presence=>true
   default_scope :order=>'orders.created_at DESC'
 Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Movies", "Music", "Paintings", "Theatre", "Biology", 
@@ -24,6 +26,8 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
  Preffered_Language=["English (U.S.)", "English (U.K.)"]
  Urgency=["8 hours", "12 hours", "24 hours", "48 hours", "3 days", "5 days", "7 days", "10 days", "15 days", "25 days"]
  
+
+
  def paypal_url(return_url, notify_url)
   values={
 
@@ -31,7 +35,7 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
     :cmd=>"_cart", #had used a cart without underscore
     :upload=>1,
     :return =>return_url,
-    #:invoice=>@order.id,
+    :invoice=>@order.id,
     :notify_url=>notify_url
   }
   values.merge!({

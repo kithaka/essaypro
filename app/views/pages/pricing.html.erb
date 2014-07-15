@@ -1,115 +1,264 @@
 
-	<div class="pricing">
-	<ul>
-        <li><a href="#">High School &#9662;</a>
-<ul>
-                <li><a href="#"><big><b>$16/Page</b></big>&nbsp;<b>7 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$17/Page</b></big>&nbsp;<b>7 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$19/Page</b></big>&nbsp;<b>5 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$21/Page</b></big>&nbsp;<b>3 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$25/Page</b></big>&nbsp;<b>2 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$28/Page</b></big>&nbsp;<b>1 Day</b>
-                </a></li>
-                <li><a href="#"><big><b>$37/Page</b></big>&nbsp;<b>8 Hours</b>
-                </a></li>
-            </ul>
-        </li>
-
-        <li><a href="#">College &#9662;</a>
-<ul>
-                <li><a href="#"><big><b>$16/Page</b></big>&nbsp;<b>14 Days</b> 
-                </a></li>
-                <li><a href="#"><big><b>$17/Page</b></big>&nbsp;<b>7 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$19/Page</b></big>&nbsp;<b>5 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$21/Page</b></big>&nbsp;<b>3 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$25/Page</b></big>&nbsp;<b>2 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$28/Page</b></big>&nbsp;<b>1 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$37/Page</b></big></br><b>8 Hours</b>
-                </a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">University &#9662;</a>
-            <ul>
-                <li><a href="#"><big><b>$16/Page</b></big>&nbsp;<b>14 Days</b> </a></li>
-                <li><a href="#"><big><b>$17/Page</b></big>&nbsp;<b>7 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$19/Page</b></big>&nbsp;<b>5 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$21/Page</b></big>&nbsp;<b>3 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$25/Page</b></big>&nbsp;<b>2 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$28/Page</b></big>&nbsp;<b>1 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$37/Page</b></big></br><b>8 Hours</b>
-                </a></li>
-            </ul>
-        </li>
-        <li><a href="#">Master's &#9662;</a>
-<ul>
-                <li><a href="#"><big><b>$16/Page</b></big>&nbsp;<b>14 Days</b> </a></li>
-                <li><a href="#"><big><b>$17/Page</b></big>&nbsp;<b>7 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$19/Page</b></big>&nbsp;<b>5 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$21/Page</b></big>&nbsp;<b>3 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$25/Page</b></big>&nbsp;<b>2 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$28/Page</b></big>&nbsp;<b>1 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$37/Page</b></big></br><b>8 Hours</b>
-                </a></li>
-            </ul>
-
-        </li>
-
-        <li><a href="">Doctoral &#9662;</a>
-<ul>
-                <li><a href="#"><big><b>$16/Page</b></big>&nbsp;<b>14 Days</b> </a></li>
-                <li><a href="#"><big><b>$17/Page</b></big>&nbsp;<b>7 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$19/Page</b></big>&nbsp;<b>5 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$21/Page</b></big>&nbsp;<b>3 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$25/Page</b></big>&nbsp;<b>2 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$28/Page</b></big>&nbsp;<b>1 Days</b>
-                </a></li>
-                <li><a href="#"><big><b>$37/Page</b></big></br><b>8 Hours</b>
-                </a></li>
-            </ul>
-        </li>
+<%= stylesheet_link_tag  "pages", media: "all" %> 
+    <div class="banner">
+        <div class="logo">
+    <b>Theacademicwriters</b>
+</div>
+    </div>
+    <div id='cssmenu'>
+    <ul>
+    <% if signed_in?%>
+    <li><%=link_to "Account", current_user %></li>
+    <% else %>
+    <li class="active"><%=link_to "Home", root_path %></li>
+    <% end %>
+    <li><%=link_to "Order Now", order_now_path %></li>
+    <li><%=link_to "Pricing", pricing_path %></li>
+    
+    <li><a href="op.html">Testimonials</a></li>
+    <li><a href="#">Sample Paper</a></li>
+    <li class='last'><a href="st.html">Contact Us</a></li>
+    
     </ul>
 </div>
-<p></p>
-<p></p>
-</br>
-</br>
-</br>
-EssayTurf.com has the most competitive prices. We are the most trustworthy company as we provide academic papers with 100% money back guarantee. Our professional writers are highly qualified in writing high quality custom essays. That is why, if you buy custom essays cheap from EssayTurf.com, you may rest assured that you will get your work written in accordance with your requirements.
+<div class="maincolumn_full">
+<h4>Our Prices!</h4>
+Theacademicwriters.com is a trustworthy custom writing agency with a 100% money back guarantee. Our policy thrives on the assurance that our custom writing services will always respond to your paper requirements. We acknowledge the challenges associated with buying custom papers and will ensure that you get value for your money.  You can buy any type of custom essay from the academicwriters.com cheaply and still have the guarantee of an A+ custom paper. 
+Theacademicwriters.com places emphasis on the quality of the agency's custom writing services and has a support team that works 24/7 to ensure that all custom essays align with the customer's essay help concerns. 
+Theacademicwriters.com pricing strategy considers that most of our custom essay clients are students whose financial wellbeing cannot allow them to pay for highly priced essay writing services. We sell high quality custom papers while ensuring that students in all academic levels, high school to doctoral, can get all the necessary help with essay writing. Theacademicwriters.com charges as low as 10$/275 words depending on the paper's urgency and academic level. The advantage of buying an essay from theacademicwriters.com is that our prices are negotiable and flexible to fit the customer's financial standing and custom paper requirements.
 
-We as EssayTurf.com offer all essay writing services and custom paper writing services at reasonable prices. We also have an excellent team that works 24/7. Thus, we offer you the best services. We believe in quality, not in quantity. We believe in professionalism. That is why we deliver our clients custom and well written essays of a premium quality at a contemptible and inexpensive price. We have been offering paper writing help to students for many years at a reasonable price that is affordable to all.
+</div>
 
-The writers that EssayTurf.com possesses are available to provide their high-quality services at a cheap price. Our clients can always negotiate the price for a custom essay when they buy custom writing from our academic writing service. At the same time, customized writing will definitely be of the highest quality as we guarantee that our writers will do their best to live up to our customers’ expectations and meet sophisticated requirements. The writers who work for academic writing companies may have to work shifts, which means that there are those who work during the day while others do their shifts during the night. Others work solo, which means that they manage their time themselves well enough to have rest and at the same time deliver any of your customized written essays on time.
+<%#unless signed_in? %>
+<div class="side">
+    Contract negotiation is an art and science that necessitates education, continuous training and diverse experience. Acquisition of negotiation skills requires the substantive understanding of the contract law and procedures of a contract. Skilled and experienced negotiators make significant contribution to the performance of an organization. The process of contract negotiation demands adequate time and effort for preparation in order to formulate a definitive and defensible negotiation position. 
+</div>
+<div class="features">
+    <h4><span class="btn btn-large btn btn-info">Topics Covered</span></h4>
+        <ul>
+   <li>Art and Design</li>
+    <li>Business and Economics</li>
+    <li>Communication and Media</li>
+    <li>Education</li>
+    <li>Health and Medicine</li>
+    <li>History</li>
+    <li>IT</li>
+    <li>Law</li>
+    <li>Literature and Languages</li>
+    <li>Mathematics</li>
+    <li>Natural Sciences</li>
+    <li>Political Sciences</li>
+    <li>Social Sciences</li>
+    <li>Technology and Engineering</li>
+    <li>...and Others!</li>
+</ul>
+</div>
 
-You will get price listing when you place an order at EssayTurf.com. The price for your paper will be based on academic level of your essay, its complexity and deadline. Pay attention, we do not belong to price-per-page standard agencies. Those companies that give you such pricing lists are not able to provide you with unique, high quality works. If a client cooperates with our company he / she will have an opportunity to get custom essays at a sensible price!
+<div class="payments">
+    <h3><em>Our Quality</em></h3>
+    <span>*Our large pool of writers allows us to respond to all types of assignments and discplines</span></br>
+    <p></p>
+<span></span></br>
+    <span>*Our custom papers are plagiarism free...We check all papers with plagiarism detection software</span></br>
+    <span></span></br>
+    <p></p>
+    <span>*8 out of 10 average quality score</span></br>
+    <p></p>
+    <span></span></br>
+    <span>*96% of orders delivered on time</span></br>
+    <p></p>
+</div>
+<div class="lowercolumn2">
+<h4>Our Prices!</h4>
+When you buy a custom paper from theacademicwriters.com, you will get all the order details inclusive of the total price. Our strategy for pricing custom essays depends on the paper's urgency, academic level, type of spacing and number of pages. The variation in the charges for our custom writing services arises from the fact that we assign different levels and types of academic papers to writers who specialize in the specified fields. Our free custom writing services include plagiarism check, proofreading and editing of your custom essay. Theacademicwriters.com offers pocket-friendly yet professional custom writing services. Place an order today and experience a combination of quality, professionalism and fast turnaround at theacademicwriters.com
+</div>
 
-What is more, you can get even more benefits. We offer you to use our editing and proofreading services for free. Before we deliver your paper to you, it is carefully checked. We also provide plagiarism checks to make sure that you will not submit plagiarized without charges.
 
-The price for essays from EssayTurf.com is cheap enough for every client to afford. Try us today and you will love our excellent services that we offer online at a reasonably cheap price!
-</body>
-</html>
+<div class="pricing">
+<form action="" id="priceform" onsubmit="return false;">
+   <fieldset>
+    <legend class="label label-success">Calculate Your Price!</legend>
+    <table>
+        <tr>
+            <td>
+                <label >Type of Paper</label>
+ <select class="btn btn-large btn btn-info" id="papertype" name='papertype' onchange="calculateTotal()">
+    <option value="None">Type of Paper</option>
+    <option value="Essay">Essay</option>
+    <option value="Term Paper">Term Paper</option>
+    <option value="Research Paper">Research Paper</option>
+    <option value="Coursework">Coursework</option>
+    <option value="Book Report">Book Report</option>
+    <option value="Book Review">Book Review</option>
+    <option value="Movie Review">Movie Review</option>
+    <option value="Dissertation">Dissertation</option>
+    <option value="Thesis">Thesis</option>
+    <option value="Thesis Proposal">Thesis Proposal</option> 
+    <option value="Research Proposal">Research Proposal</option>
+    <option value="Formatting">Formatting</option>
+    <option value="Admission Essay">Admission Essay</option>
+    <option value="Scholarship Essay">Scholarship Essay</option>
+    <option value="Personal Statement">Personal Statement</option>
+    <option value="Editing">Editing</option>
+    <option value="Proofreading">Proofreading</option>
+    <option value="Lab Report">Lab Report</option>
+    <option value="Math Problem">Math Problem</option>
+    <option value="Article Critique">Article Critique</option>
+    <option value="Annotated Bibliography">Annotated Bibliography</option>
+    <option value="Reaction Paper">Reaction Paper</option>
+    <option value="PowerPoint Presentation">PowerPoint Presentation</option>
+    <option value="Application Essay">Application Essay</option>
+    <option value="Statistics Project">Statistics Project</option>
+    <option value="Multiple Choice Questions">Multiple Choice Questions</option>
+    <option value="Other">Other</option>
+    </select>
+</td>
+<td>
+    <label >Academic Level</label>
+    <select class="btn btn-large btn btn-info" id="level" name='level' onchange="calculateTotal()">
+    <option value="None">Academic level</option>
+    <option value="High School">High School</option>
+    <option value="Undergraduate">Undergraduate</option>
+    <option value="Master">Master</option>
+    <option value="Ph.D.">Ph.D.</option>
+   </select>
+</td>
+<td>
+    <label >Deadline</label>
+    <select class="btn btn-large btn btn-info" id="deadline" name='deadline' onchange="calculateTotal()">
+    <option value="None">Paper Deadline</option>
+    <option value="8hours">8 hours</option>
+    <option value="12hours">12 hours</option>
+    <option value="24hours">24 hours</option>
+    <option value="48hours">48 hours</option>
+    <option value="3days">3 days</option>
+    <option value="5days">5 days</option>
+    <option value="7days">7 days</option>
+    <option value="10days">10 days</option>
+    <option value="15days">15 days</option>
+   </select>
+</td>
+<td>
+   <label >Spacing</label>
+    <select class="btn btn-large btn btn-info" id="spacing" name='spacing' onchange="calculateTotal()">
+    <option value="None">Paper Spacing</option>
+    <option value="doublespace">Double Spacing</option>
+    <option value="singlespace">Single Space</option>
+   </select>
+</td>
+<td>
+  <label >Pages</label> 
+<select class="btn btn-large btn btn-info" id="pages" name='pages' onchange="calculateTotal()">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+<option value="32">32</option>
+<option value="33">33</option>
+<option value="34">34</option>
+<option value="35">35</option>
+<option value="36">36</option>
+<option value="37">37</option>
+<option value="38">38</option>
+<option value="39">39</option>
+<option value="40">40</option>
+<option value="41">41</option>
+<option value="42">42</option>
+<option value="43">43</option>
+<option value="44">44</option>
+<option value="45">45</option>
+<option value="46">46</option>
+<option value="47">47</option>
+<option value="48">48</option>
+<option value="49">49</option>
+<option value="50">50</option>
+<option value="51">51</option>
+<option value="52">52</option>
+<option value="53">53</option>
+<option value="54">54</option>
+<option value="55">55</option>
+<option value="56">56</option>
+<option value="57">57</option>
+<option value="58">58</option>
+<option value="59">59</option>
+<option value="60">60</option>
+<option value="61">61</option>
+<option value="62">62</option>
+<option value="63">63</option>
+<option value="64">64</option>
+<option value="65">65</option>
+<option value="66">66</option>
+<option value="67">67</option>
+<option value="68">68</option>
+<option value="69">69</option>
+<option value="70">70</option>
+<option value="71">71</option>
+<option value="72">72</option>
+<option value="73">73</option>
+<option value="74">74</option>
+<option value="75">75</option>
+<option value="76">76</option>
+<option value="77">77</option>
+<option value="78">78</option>
+<option value="79">79</option>
+<option value="80">80</option>
+<option value="81">81</option>
+<option value="82">82</option>
+<option value="83">83</option>
+<option value="84">84</option>
+<option value="85">85</option>
+<option value="86">86</option>
+<option value="87">87</option>
+<option value="88">88</option>
+<option value="89">89</option>
+<option value="90">90</option>
+<option value="91">91</option>
+<option value="92">92</option>
+<option value="93">93</option>
+<option value="94">94</option>
+<option value="95">95</option>
+<option value="96">96</option>
+<option value="97">97</option>
+<option value="98">98</option>
+<option value="99">99</option>
+<option value="100">100</option>
+</select>
+</td>
+ 
+<td>
+     <label >Price</label>
+<div class="btn btn-large btn btn-info" id="totalPrice"></div>
+</td>
+ </tr>
+</table>
+    </fieldset>
+</form>
+</div>
 

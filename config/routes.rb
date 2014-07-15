@@ -1,26 +1,20 @@
 Essaypros::Application.routes.draw do
 
-#resources :uploadfiles, :only=>[:index, :new, :create, :destroy]
-#match '/uploads', :to=>'uploadfiles#new'
-  #get "uploads/index"
-
-  #get "uploads/uploadFile"
-
   resources :customers
   resources :payment_notifications
 
   resources :orders do
     resources :uploadfiles
+    resources :messages
+    resources :states, only: [:new, :create]
   end
-  #resources :uploads
-
   resources :sessions, :only=>[:new, :create, :destroy]
-  post "uploads/uploadFile"
   match '/signup', :to=>"customers#new"
   match '/signin', :to=>'sessions#new'
   match '/signout', :to=>'sessions#destroy', :via=>:delete
   match '/order_now', :to=>"orders#new"
   match '/pricing', :to=>'pages#pricing'
+  match '/order_now', :to=>"orders#new"
   #match '/uploadfile', :to=>'uploads#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

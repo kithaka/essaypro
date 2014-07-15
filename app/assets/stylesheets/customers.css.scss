@@ -1,3 +1,229 @@
 // Place all the styles related to the Customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
+
+/* styled form */
+size{
+	margin: 3%;
+}
+body {
+	color: #333;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: #F5F5F4;
+margin: 2%;
+}
+form {
+width: 50%;
+display: table;
+padding: 10px;
+position: absolute;
+top: 33%;
+left: 30%;
+}
+form textarea {
+width: 90%;
+}
+form input{
+margin-bottom: 5%;
+width: 80%;
+font-size: 135%;
+	border:1px line;
+}
+form select{
+	width: 80%;
+	margin-bottom: 5%;
+	font-size: 135%;
+}
+
+#error_explanation {
+color: #f00;
+position: absolute;
+top: 50px;
+left: 700px;
+}
+#error_explanation ul {
+list-style: none;
+margin: 0 0 18px 0;
+}
+div.tableRow {
+display: table-row;
+clear: both;
+}
+div.tableRow span {
+display: table-cell;
+vertical-align: top;
+padding: 3px;
+}
+div.tableRow span:first-child {
+text-align: right;
+}
+p.heading {
+font-weight: bold;
+}
+
+label {
+	 text-shadow: 0px 1px 0px #f2f2f2;
+}
+#contact {
+border: 0.5px solid black;
+border-radius:10px;
+	 margin: 60px auto; padding: 60px 30px;
+	background: #c9d0de; border: 1px solid #e1e1e1;
+	-moz-box-shadow: 0px 0px 8px #444;
+	-webkit-box-shadow: 0px 0px 8px #444;
+}
+
+.guarantee1{
+margin: 10px;
+	width: 18%;
+	line-height: 1.5em;
+	font-size: 12px;
+	background: #F2F2EB;
+	border: 1px dotted;
+border-radius:10px;
+border-bottom: transparent;
+top: 22%;
+position: absolute;
+right: 9%;
+padding-left: 1em;
+padding-bottom: 1em;
+background: url("guaranteed.png") repeat-x;
+color: transparent;
+}
+
+.guarantee2{
+	line-height: 1.5em;
+	font-size: 12px;
+	background: #F2F2EB;
+	border: 1px dotted;
+border-radius:10px;
+border-bottom: transparent;
+top: 80%;
+position: absolute;
+left: 5.5%;
+padding-left: 1em;
+padding-bottom: 1em;
+background: url("badge-guarantee.gif") repeat no-repeat;
+color: transparent;
+}
+
+.show{
+	position: absolute;
+	right: 10%;
+	width: 60%;
+	top: 28%;
+	font-size: medium;
+	padding-left: 15px;
+	background-color: #FFFFFF;
+	line-height: 2em;
+	border-top: thin solid #675c47;
+	border-bottom: thin solid #675c47;
+	border-left: thin solid #675c47;
+	border-radius: 15px;
+}
+.show table {
+border-collapse: collapse;
+caption-side: top;
+width: 95%;
+}
+
+caption {
+font-style: italic;
+padding-top: 10px;
+}
+.upperbar{
+	position: absolute;
+	top: 5%;
+	left: 40%;
+	background: url("bg.png") repeat-x;
+
+}
+.upperbar ul {
+margin: 0px;
+list-style-type: none;
+padding: 5px 0px 5px 0px;
+}
+.upperbar ul li {
+padding: 5px 10px 5px 10px;
+font-size: large;
+font-style: bold;
+color: black;
+font-family: Verdana, Helvetica, Arial,sans-serrif;
+}
+.upperbar ul li.selected {
+background-color: #c8b99c;
+}
+
+
+.upperpart{
+position: absolute;
+top: 1%;
+left:0%;
+width: 100%;
+background: url("background.png") repeat-x;
+background-size: 100%;
+color: white;
+font-size: 150%;
+text-align: center;
+
+}
+.upperpart span{
+	color: transparent;
+}
+
+
+.uploads {
+color: #000;
+
+margin-bottom: 2em;
+}
+.uploads form input{
+width: 10%;
+	border:1px thin solid;
+}
+.features{
+position: absolute;
+top: 25%;
+width: 20%;
+left: 6%;
+padding-left: 1em;
+padding-bottom: 1em;
+border:1px solid gray;
+	border-radius:5px;
+}
+
+.features ul li{
+	list-style: circles;
+}
+.login{
+    position: absolute;
+    top: 13%;
+	left: 11%;
+	padding: 0;
+	margin: 2%;
+	width: 80%;
+	line-height: 1.3em;
+	font-size: small;
+	}
+.login form input{
+margin-bottom: 5%;
+width: 80%;
+font-size: 100%;
+	border:1px line;
+}
+.free{
+position: absolute;
+top: 105%;
+width: 22%;
+left: 5.5%;
+padding-left: 1em;
+padding-bottom: 1em;
+border:1px solid gray;
+	border-radius:5px;
+	color: blue;
+}
+
+.free ul li{
+	list-style: circles;
+}

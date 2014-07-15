@@ -1,3 +1,5 @@
+
+
 #cssmenu,
 #cssmenu ul,
 #cssmenu ul li,
@@ -14,7 +16,10 @@
   box-sizing: border-box;
 }
 #cssmenu {
-  width: auto;
+position: absolute;
+top: 15%;
+left: 24%;
+  width: 68.5%;
   font-family: Helvetica, Arial, sans-serif;
   color: #ffffff;
 }

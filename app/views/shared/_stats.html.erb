@@ -1,0 +1,15 @@
+<% @order%>
+<div class="stats">
+<a href="<%= following_order_path(@order) %>">
+<strong id="following" class="stat">
+<%= @order.completes.count %>
+</strong>
+following
+</a>
+<a href="<%= followers_order_path(@order) %>">
+<strong id="followers" class="stat">
+<%= @order.revisions.count %>
+</strong>
+followers
+</a>
+</div>

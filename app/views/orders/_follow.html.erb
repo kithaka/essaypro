@@ -1,0 +1,5 @@
+<%= form_for(@order.markings.build(complete_id: @order.id)) do |f| %>
+<div><%= f.hidden_field :complete_id %></div>
+<div><%= f.hidden_field :status, :value => 'complete' %></div>
+<%= f.submit "Complete", class: "btn btn-large btn-primary" %>
+<% end %>

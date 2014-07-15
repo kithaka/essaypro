@@ -1,0 +1,28 @@
+
+<div class="message">
+<%= form_for([@order, @order.messages.new], :html=>{:style=>'display: none;'}) do |f| %>
+<table>
+  <tr>
+    <% if current_user.admin %>
+    <span><%= f.hidden_field :sender, :value => 'administrator' %></span>
+    <% else %>
+    <span><%= f.hidden_field :recipient, :value => 'administrator' %></span>
+    <% end %>
+  </tr>
+  <tr>
+    <td><%= f.text_field :subject, :placeholder=>"Enter Message Subject"%></td>
+    
+  </tr>
+
+  </tr>
+  <td><%= f.text_area :body, :placeholder=>"Enter Message Here" %></td>
+  
+  
+  </tr>
+    <tr>
+      <td><%= f.submit "Message Admin", :class=>"btn btn-large btn-primary" %><span><%= f.submit "Message Writer", :class=>"btn btn-large btn-primary" %></span></td>
+      
+</tr>
+</table>
+<% end %>
+<div>

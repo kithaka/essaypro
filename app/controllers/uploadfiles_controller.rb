@@ -16,7 +16,7 @@ class UploadfilesController < ApplicationController
 
     respond_to do |format|
       if @uploadfile.save
-        format.html { redirect_to root_path, notice: 'file was successfully uploaded.' }
+        format.html { redirect_to @order, notice: 'file was successfully uploaded.' }
       else
         format.html { render action: "new" }
       end
@@ -28,7 +28,7 @@ class UploadfilesController < ApplicationController
     @uploadfile.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, :notice=>"the file #{@uploadfile.name} has been deleted" }
+      format.html { redirect_to @order, :notice=>"the file #{@uploadfile.name} has been deleted" }
       format.json { head :no_content }
     end
   end

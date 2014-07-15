@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140703105602) do
+ActiveRecord::Schema.define(:version => 20140712212722) do
 
   create_table "customers", :force => true do |t|
     t.string   "firstname"
@@ -24,6 +24,28 @@ ActiveRecord::Schema.define(:version => 20140703105602) do
     t.datetime "updated_at",                         :null => false
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
+  end
+
+  create_table "markings", :force => true do |t|
+    t.integer  "complete_id"
+    t.integer  "revision_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "status"
+  end
+
+  add_index "markings", ["complete_id", "revision_id"], :name => "index_markings_on_complete_id_and_revision_id", :unique => true
+  add_index "markings", ["complete_id"], :name => "index_markings_on_complete_id"
+  add_index "markings", ["revision_id"], :name => "index_markings_on_revision_id"
+
+  create_table "messages", :force => true do |t|
+    t.string   "body"
+    t.string   "subject"
+    t.integer  "order_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "recipient"
+    t.string   "sender"
   end
 
   create_table "orders", :force => true do |t|
@@ -44,6 +66,14 @@ ActiveRecord::Schema.define(:version => 20140703105602) do
     t.datetime "purchased_at"
   end
 
+  create_table "orderstatuses", :force => true do |t|
+    t.string   "complete"
+    t.string   "revision"
+    t.integer  "order_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "orderuploads", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -56,6 +86,22 @@ ActiveRecord::Schema.define(:version => 20140703105602) do
     t.integer  "order_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+  end
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "read_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "relationships", ["read_id"], :name => "index_relationships_on_read_id", :unique => true
+
+  create_table "states", :force => true do |t|
+    t.string   "complete"
+    t.string   "revision"
+    t.integer  "order_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "uploadfiles", :force => true do |t|

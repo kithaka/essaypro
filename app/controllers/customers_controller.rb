@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
-   before_filter :signed_in_user, :only=>[:index, :show, :edit, :update]
+   before_filter :signed_in_user, :only=>[:show, :edit, :update]
   before_filter :correct_user, :only=>[:edit, :update]
   before_filter :admin_user, :only=>[:index, :destroy]
   def index

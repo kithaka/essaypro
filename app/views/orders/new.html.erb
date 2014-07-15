@@ -1,23 +1,63 @@
+
+<%= stylesheet_link_tag  "orders", media: "all" %>
+<div class="upperpart">
+	<p>Theacademicwriters</p>
+<p>weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+<p>weeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+</div>
+</div>
+<div id='cssmenu'>
+	<ul>
+
+    <li class="active"><%=link_to "Home", root_path %></li>
+    <li><%=link_to "Order Now", order_now_path %></li>
+    <li><%=link_to "Pricing", pricing_path %></li>
+    
+    <li><a href="op.html">Testimonials</a></li>
+    <li><a href="#">Sample Paper</a></li>
+    <li class='last'><a href="st.html">Contact Us</a></li>
+    </ul>
+</div>
+<div class="upperbar">
+	<ul>
+    <li>Welcome: <%=current_user.firstname%></li>
+    <li>The Time is <%=Time.now%></li>
+    
+</div>
+
+<div class="account">
+	<% if signed_in? %>
+	<ul>
+		<h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
+		<li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
+		<li><%= link_to 'messages', '#'%></li></br>
+		<li><%= link_to "My Orders", current_user%></li></br>
+		<li><%= link_to 'processing_orders', '#'%></li></br>
+		<li><%= link_to 'complete_orders', '#'%></li></br>
+		<li><%= link_to 'revisions', '#'%></li></br>
+		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
+	</ul>
+	<% end %>
+</div>
+
+<div class="free">
+	<h4><span class="btn btn-large btn btn-info">Service Features</span></h4>
+		<ul>
+
+   <li>FREE amendments</li>
+    <li>FREE bibliography page</li>
+    <li>FREE title page</li>
+    <li>FREE Plagiarism report</li>
+    <li> FREE Formatting</li>
+    <li>100% original papers</li>
+    <li>275 words per page</li>
+    <li>Any citation style</li>
+    <li>Guaranteed Privacy</li>
+    <li>24/7 customer support</li>
+</ul>
+</div>
 <div class="size">
 <%= render 'form' %>
-<div class="guarantee">
-	<h3>PayPal Verified</h3>
-	<span>1. Fill our sign up form and place your order</span></br>
-	<p></p>
-	<span>2. Log in to your account and pay for the order</span></br>
-	<p></p>
-	<span>3. Trace your order progress</span></br>
-	<p></p>
-	<span>Fill our sign up form and place your order</span></br>
-	<p></p>
-	<span>Log in to your account and pay for the order</span></br>
-	<p></p>
-	<span>Trace your order progress</span></br>
-	<p></p>
-	<span>Fill our sign up form and place your order</span></br>
-	<p></p>
-</div>
-<%#= link_to 'Back', orders_path %>
 <div class="guarantee1">
 	<h3>PayPal Verified</h3>
 	<span>1. Fill our sign up form and place your order</span></br>

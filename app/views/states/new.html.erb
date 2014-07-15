@@ -1,0 +1,13 @@
+<%= form_for([@order, @order.states.new]) do |f| %>
+<table>
+  <tr>
+    <% if current_user.admin %>
+    <td><%= f.hidden_field :complete, :value=>true %></td>
+    <% else %>
+    <td><%= f.hidden_field :revision, :value=>true %></td>
+    <% end %>
+  <td><%= f.submit "Request", :class=>"btn btn-large btn-primary" %></td>
+      
+</tr>
+</table>
+<% end %>

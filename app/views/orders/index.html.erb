@@ -1,45 +1,114 @@
-<h1>Listing orders</h1>
-<%=will_paginate %>
+<%= stylesheet_link_tag  "orders", media: "all" %>
+<div class="upperpart">
+    <p>Theacademicwriters</p>
+    <p>
+weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+<p>weeeeeeeeeeeeeeeeeeeeeeeeeeee</br>
+</span>
+</div>
+<div id='cssmenu'>
+    <ul>
+    <li class="active"><%=link_to "Home", root_path %></li>
+    <li><%=link_to "Order Now", order_now_path %></li>
+    <li><%=link_to "Pricing", pricing_path %></li>
+    
+    <li><a href="op.html">Testimonials</a></li>
+    <li><a href="#">Sample Paper</a></li>
+    <li class='last'><a href="st.html">Contact Us</a></li>
+    </ul>
+</div>
+
+<div class="upperbar">
+    <ul>
+    <li>Welcome: <%=current_user.firstname%></li>
+    <li>The Time is <%=Time.now%></li>
+
+</div>
+<div class="account">
+    <ul>
+        <h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
+        <li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
+        <li><%= link_to 'messages', '#' %></li></br>
+        <% if current_user.admin %>
+        <li><%= link_to "New Orders", orders_url%></li></br>
+        <% else %>
+        <li><%= link_to "New Orders", current_user%></li></br>
+        <% end %>
+        <li><%= link_to 'processing_orders', '#'%></li></br>
+        <li><%= link_to 'complete_orders', '#'%></li></br>
+        <li><%= link_to 'revisions', '#'%></li></br>
+        <li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
+    </ul>
+</div>
+<div class="guarantee2">
+    <h3>PayPal Verified</h3>
+    <span>1. Fill our sign up form and place your order</span></br>
+    <p></p>
+    <span>2. Log in to your account and pay for the order</span></br>
+    <p></p>
+    <span>3. Trace your order progress</span></br>
+    <p></p>
+    <span>Fill our sign up form and place your order</span></br>
+    <p></p>
+    <span>Log in to your account and pay for the order</span></br>
+    <p></p>
+    <span>Trace your order progress</span></br>
+    <p></p>
+    <span>Fill our sign up form and place your order</span></br>
+    <p></p>
+</div>
+<div class="free">
+    <h4 class="btn btn-large btn btn-info">Service Features</h4>
+        <ul>
+
+   <li>FREE amendments</li>
+    <li>FREE bibliography page</li>
+    <li>FREE title page</li>
+    <li>FREE Plagiarism report</li>
+    <li> FREE Formatting</li>
+    <li>100% original papers</li>
+    <li>275 words per page</li>
+    <li>Any citation style</li>
+    <li>Guaranteed Privacy</li>
+    <li>24/7 customer support</li>
+</ul>
+</div>
+<div class="show">
+    <%=will_paginate @orders%>
+<%@orders.each do |order| %>
 
 <table>
-  <tr>
-    <th>Topic</th>
-    <th>Subject</th>
-    <th>Documenttype</th>
-    <th>Pages</th>
-    <th>Urgency</th>
-    <th>References</th>
-    <th>Citation</th>
-    <th>Level</th>
-    <th>Language</th>
-    <th>Instructions</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <caption>
+    <b><%= order.topic %>:</b><%= link_to 'Order Details', order, :class=>"btn btn-large btn-primary" %></b>
+</b><%= link_to 'Upload files', order, :class=>"btn btn-small btn-primary" %></b>
+<span id="messages"><%= link_to 'messages', order%>|<span class="badge badge-important"> 
+    <%=order.messages.count(:recipient) %></span></span>
 
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.topic %></td>
-    <td><%= order.subject %></td>
-    <td><%= order.documenttype %></td>
-    <td><%= order.pages %></td>
-    <td><%= order.urgency %></td>
-    <td><%= order.references %></td>
-    <td><%= order.citation %></td>
-    <td><%= order.level %></td>
-    <td><%= order.language %></td>
-    <td><%= order.instructions %></td>
-    <td><%= link_to 'Show', order %></td>
-    <td><%= link_to 'Edit', edit_order_path(order) %></td>
-    <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+</caption>
+<tr>
+<th> Deadline:</th>
+<th><%= order.urgency %></th>
+<th>Time remaining</th>
+<th></th>
+</tr>
+<tr>
+<td>PaperID:</td>
+<td>#0412<%=order.id%>90</td>
+<td>No of Pages</td>
+<td><%=order.pages%></td>
+</tr>
+<tr>
+<td>Order type:</td>
+<td><%=order.documenttype%></td>
+<td>Sources</td>
+<td><%=order.references%></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
 </table>
-
-<br />
-
-
-<%= link_to 'New Order', new_order_path %>
-
-<%=will_paginate %>
+<% end %>
+</div>

@@ -1,0 +1,5 @@
+
+<%= form_for(@order.markings.find_by_complete_id(@order),
+html: { method: :delete }) do |f| %>
+<%= f.submit "Put on Revision", class: "btn btn-large" %>
+<% end %>
