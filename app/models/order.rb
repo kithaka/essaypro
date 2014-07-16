@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :urgency, :price
+  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :urgency, :price, :spacing
   belongs_to :customer
   has_many :payment_notifications
   has_many :uploadfiles
@@ -25,6 +25,7 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
  Citation_Style=["APA", "MLA", "Turabian", "Chicago", "Harvard", "Oxford", "Vancouver", "CBE", "Other"]
  Preffered_Language=["English (U.S.)", "English (U.K.)"]
  Urgency=["8 hours", "12 hours", "24 hours", "48 hours", "3 days", "5 days", "7 days", "10 days", "15 days", "25 days"]
+ Spacing=["single", "double"]
  
 
 
@@ -35,7 +36,7 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
     :cmd=>"_cart", #had used a cart without underscore
     :upload=>1,
     :return =>return_url,
-    :invoice=>@order.id,
+    :invoice=>id,
     :notify_url=>notify_url
   }
   values.merge!({

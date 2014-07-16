@@ -110,7 +110,7 @@ else
 {
     var divobj = document.getElementById('totalPrice');
     divobj.style.display='block';
-    divobj.innerHTML = "Select Each";
+    divobj.innerHTML = "$"+0;
 }
 
 

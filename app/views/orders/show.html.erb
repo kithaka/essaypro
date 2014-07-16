@@ -39,10 +39,18 @@ weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
 		
 		<li><%= link_to 'processing_orders', '#'%></li></br>
 		<li><%= link_to 'complete_orders', '#'%>|
-			<span class="badge badge-important"><%=@order.states.count(:complete)%></span></li></br>
-
+			<span class="badge badge-important">
+			<%=@order.states.count(:complete) - @order.states.count(:revision)%> 
+		</span>
+	</li></br>
 		<li><%= link_to 'revisions', '#'%>|
-			<span class="badge badge-important"><%=@order.states.count(:revision)%></span></li></br>
+			<% if @order.states.count(:complete) %>
+			<% if @order.states.count(:complete) - @order.states.count(:revision)==0 %>
+			<span class="badge badge-important">1</span>
+			<% end %>
+			<% end %>
+		</li></br>
+			
 
 		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
 	</ul>

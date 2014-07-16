@@ -1,10 +1,8 @@
 class StatesController < ApplicationController
 before_filter :load_order
-before_filter :reset 
   def create
   	@state = @order.states.new(params[:state])
-    before_save 
-    if @state.save
+        if @state.save
       respond_to do |format|
         format.html {redirect_to @order, :notice => 'Order Confirmed'}
         format.js

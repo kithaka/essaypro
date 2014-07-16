@@ -210,37 +210,6 @@ left: 18%;
 	border-radius:5px;
 }
 
-.dropdown-menu,.pricing ul{
-        padding: 0;
-        list-style: none;
-    }
-
-    .dropdown-menu, .pricing ul li{
-        float: left;
-        width: 83px;
-        text-align: center;
-        line-height: 21px;
-    }
-    .pricing ul li a{
-        display: block;
-        width: 80px;
-        padding: 5px 10px;
-        background: url("mw_menu_active_bg.2.png") repeat-x;
-        text-decoration: none;
-        font-family: "georgia";
-        color: #cc3300;
-        font-size: medium;
-    }
-    .pricing ul li a:hover{
-        color: #fff;
-        background: #939393;
-    }
-    .pricing ul li ul{
-        display: none;
-    }
-    .pricing ul li:hover ul{
-        display: block; /* display the dropdown */
-    }
     .login{
     position: absolute;
     top: 32%;

@@ -34,9 +34,12 @@ weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
 		<% else %>
 		<li><%= link_to "My Orders", current_user%></li></br>
 		<% end %>
-		<li><%= link_to 'processing_orders', '#'%></li></br>
-		<li><%= link_to 'complete_orders', '#'%></li></br>
-		<li><%= link_to 'revisions', '#'%></li></br>
+		<li><%= link_to 'processing_orders', '#'%></li></br> 
+		<li><%= link_to 'complete_orders', '#'%>|
+		</li></br>
+		
+		<li><%= link_to 'revisions', '#'%>|
+		</li></br>
 		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
 	</ul>
 </div>
@@ -78,9 +81,22 @@ weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
 <%@orders.each do |order| %>
 <table>
   <caption>
+  	<b>
+<% if order.states.count(:complete) - order.states.count(:revision) >0%>
+			<span class="badge badge-important">Complete</span>
+<% end %>
+</b>
+<b>
+<% if order.states.count(:complete) %>
+			<% if order.states.count(:complete) - order.states.count(:revision)==0 %>
+			<span class="badge badge-important">Revision</span>
+			<% end %>
+	<% end %>
+</b>
     <b><%= order.topic %>:</b><%= link_to 'Order Details', order, :class=>"btn btn-large btn-primary" %></b>
 </b><%= link_to 'Upload files', order, :class=>"btn btn-large btn-primary" %></b>
-<span><%= link_to 'messages', order%>|<span class="badge badge-important"> <%=order.messages.count(:sender) %></span></pan>
+<span><%= link_to 'messages', order%>|<span class="badge badge-important"> <%=order.messages.count(:sender) %></span></span>
+
 </caption>
 <tr>
 <th> Deadline:</th>

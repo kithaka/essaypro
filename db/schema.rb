@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140712212722) do
+ActiveRecord::Schema.define(:version => 20140715191608) do
 
   create_table "customers", :force => true do |t|
     t.string   "firstname"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20140712212722) do
     t.integer  "customer_id"
     t.decimal  "price"
     t.datetime "purchased_at"
+    t.string   "spacing"
   end
 
   create_table "orderstatuses", :force => true do |t|
