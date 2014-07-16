@@ -79,6 +79,18 @@ weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
 
 <table>
   <caption>
+    <b>
+<% if order.states.count(:complete) - order.states.count(:revision) >0%>
+            <span class="badge badge-important">Complete</span>
+<% end %>
+</b>
+<b>
+<% if order.states.count(:complete)>0 %>
+            <% if order.states.count(:complete) - order.states.count(:revision)==0 %>
+            <span class="badge badge-important">Revision</span>
+            <% end %>
+    <% end %>
+</b>
     <b><%= order.topic %>:</b><%= link_to 'Order Details', order, :class=>"btn btn-large btn-primary" %></b>
 </b><%= link_to 'Upload files', order, :class=>"btn btn-small btn-primary" %></b>
 <span id="messages"><%= link_to 'messages', order%>|<span class="badge badge-important"> 

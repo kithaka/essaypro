@@ -87,7 +87,7 @@ weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
 <% end %>
 </b>
 <b>
-<% if order.states.count(:complete) %>
+<% if order.states.count(:complete)>0 %>
 			<% if order.states.count(:complete) - order.states.count(:revision)==0 %>
 			<span class="badge badge-important">Revision</span>
 			<% end %>

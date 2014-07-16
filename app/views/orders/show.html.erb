@@ -44,10 +44,8 @@ weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
 		</span>
 	</li></br>
 		<li><%= link_to 'revisions', '#'%>|
-			<% if @order.states.count(:complete) %>
-			<% if @order.states.count(:complete) - @order.states.count(:revision)==0 %>
+			<% if @order.states.count(:complete)>0 && (@order.states.count(:complete) - @order.states.count(:revision)==0)%>
 			<span class="badge badge-important">1</span>
-			<% end %>
 			<% end %>
 		</li></br>
 			
