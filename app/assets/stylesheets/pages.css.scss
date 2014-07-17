@@ -12,18 +12,15 @@ line-height: 1.8em;
 }
 
 .top {
-background-color: #3399CC;
 margin: 1%;
-height: 120px;
+height: 300%;
 }
 #logo{
-position: absolute;
-color: white;
-background: url("black.png") repeat-x;
-background-size: 100%;
-font-size: 300%;
+background: url("banner.png") no-repeat;
+background-size: 45%;
 border: 2px thin solid;	
-
+position: relative;
+left: 10%;
 }
 
 nav {
