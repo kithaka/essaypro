@@ -110,15 +110,17 @@ border:1px thin solid;
 	color: brown;
 	}
 }
-#centeriz{
-	padding: 5%;
-}
 .pricing {
-
 line-height: 1.3em;
 margin: 3%;
 }
+.pricing select{
+	font-size: 120%;
+}
 .pricing legend{
 text-align: center;
-font-size: 120%;
+font-size: 150%;
+}
+#totalPrice{
+	font-size: 150%;
 }
