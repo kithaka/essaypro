@@ -1,69 +1,12 @@
 <%= stylesheet_link_tag  "pages", media: "all" %> 
-	<div class="banner">
-		<div class="logo">
-    <b>Theacademicwriters</b>
+<div id="elixirs">
+<% unless signed_in?%>
+<div id="login">
+	<%= render :file => 'sessions/new' %>
 </div>
-	</div>
-	<div id='cssmenu'>
-	<ul>
-	<% if signed_in?%>
-    <li><%=link_to "Account", current_user %></li>
-    <% else %>
-    <li class="active"><%=link_to "Home", root_path %></li>
-    <% end %>
-    <li><%=link_to "Order Now", order_now_path %></li>
-    <li><%=link_to "Pricing", pricing_path %></li>
-    
-    <li><a href="op.html">Sample Papers</a></li>
-    <li><a href="#">Blog</a></li>
-    <li class='last'><a href="st.html">Contact Us</a></li>
-    
-    </ul>
-</div>
-<div class="maincolumn_full">
-<h4> What we Offer</h4>
-Theacademicwriters.com is a global freelance writing company that places great emphasis on customer satisfaction. The company has a large pool of skilled writers to ensure timely response to all types of assignments in various disciplines. Theacademicwriters.com has been in online freelance writing business for several years now and the company is here to ensure you have access to reliable and stable writing services anytime you require assistance with essays, term papers, research papers, book reviews, movies reviews, article critiques and other forms of writing. The academicwriters.com has a dedicated support team to ensure you receive a top-notch paper within your preferred deadline. Place an order today with us and have our network of skilled writers do the hard work for you at a reasonable fee. Quality work supersedes the idea of the challenges of great writing due to matters of writers' geographical location, native language or ethnicity color. Great writers share positive attitude and professionalism towards writing assignments irrespective of their background.</div>
-<div class="center1">
-<div class="alert alert-danger" role="alert">
-	<h4>What We Do</h4>
-	<ul>
-		<li> We write academic papers</li></br>
-		<li>Website content</li><br>
-		<li>Articles</li></br>
-		<li>Css3, html5 and JavaScript Programming</li></br>
-		<li>Ruby on Rails Programming</li>
-	</ul>
-</div>
-</div>
-<div class="center2">
-<div class="alert alert-info" role="alert">
-	<h4>Why Us?</h4>
-	<ul>
-		<li>We Work on  all types of assignments and discplines</li></br>
-		<li>Plagiarism-free papers</li></br>
-		<li>8/10 average quality score</li></br>
-		<li>96% of orders delivered on time</li></br>
-	</ul>
-</div>
-</div>
-<div class="center3">
-<div class="alert alert-success" role="alert">
-	<h4>How it Works?</h4>
-	<ul>
-		<li>Sign up</li></br>
-		<li>Place the Order of your choice</li></br>
-		<li>Pay for the Order</li></br>
-		<li>Sit and Wait for an A+ Paper</li></br>
-		<li>Review Delivered Paper</li></br>
-		
-	</ul>
-</div>
-</div>
-<%#unless signed_in? %>
-<div class="side">
-	Contract negotiation is an art and science that necessitates education, continuous training and diverse experience. Acquisition of negotiation skills requires the substantive understanding of the contract law and procedures of a contract. Skilled and experienced negotiators make significant contribution to the performance of an organization. The process of contract negotiation demands adequate time and effort for preparation in order to formulate a definitive and defensible negotiation position. 
-</div>
-<div class="features">
+  <% end %>
+  <p></p>
+<div id="features">
 	<h4><span class="btn btn-large btn btn-info">Topics Covered</span></h4>
 		<ul>
    <li>Art and Design</li>
@@ -83,22 +26,64 @@ Theacademicwriters.com is a global freelance writing company that places great e
     <li>...and Others!</li>
 </ul>
 </div>
+<p></p>
+<div id="features">
+<h4><span class="btn btn-large btn btn-info">Service Features</span></h4>
+		<ul>
+
+   <li>FREE amendments</li>
+    <li>FREE bibliography page</li>
+    <li>FREE title page</li>
+    <li>FREE Plagiarism report</li>
+    <li>FREE Formatting</li>
+    <li>100% original papers</li>
+    <li>275 words per page</li>
+    <li>Any citation style</li>
+    <li>Guaranteed Privacy</li>
+    <li> 24/7 customer support</li>
+    <li>...and Others!</li>
+</ul>
+</div>
 
 <div class="payments">
-	<h3><em>Our Quality</em></h3>
-	<span>*Our large pool of writers allows us to respond to all types of assignments and discplines</span></br>
-	<p></p>
-<span></span></br>
-	<span>*Our custom papers are plagiarism free...We check all papers with plagiarism detection software</span></br>
-	<span></span></br>
-	<p></p>
-	<span>*8 out of 10 average quality score</span></br>
-	<p></p>
-	<span></span></br>
-	<span>*96% of orders delivered on time</span></br>
-	<p></p>
 </div>
-<div class="lowercolumn">
-<h4> What we Offer</h4>
+</div>
+
+Theacademicwriters.com is a global freelance writing company that places great emphasis on customer satisfaction. The company has a large pool of skilled writers to ensure timely response to all types of assignments in various disciplines. Theacademicwriters.com has been in online freelance writing business for several years now and the company is here to ensure you have access to reliable and stable writing services anytime you require assistance with essays, term papers, research papers, book reviews, movies reviews, article critiques and other forms of writing. The academicwriters.com has a dedicated support team to ensure you receive a top-notch paper within your preferred deadline. Place an order today with us and have our network of skilled writers do the hard work for you at a reasonable fee. Quality work supersedes the idea of the challenges of great writing due to matters of writers' geographical location, native language or ethnicity color. Great writers share positive attitude and professionalism towards writing assignments irrespective of their background.
+<table id="centeriz">
+	<tr>
+		<td id="center">
+<h4>What We Do</h4>
+	<ul>
+		<li> We write academic papers</li></br>
+		<li>Website content</li><br>
+		<li>Articles</li></br>
+		<li>Css3, html5 and JavaScript Programming</li></br>
+		<li>Ruby on Rails Programming</li>
+	</ul>
+	</td>
+	<td id="center">
+	<h4>Why Us?</h4>
+	<ul>
+		<li>We Work on  all types of assignments and discplines</li></br>
+		<li>Plagiarism-free papers</li></br>
+		<li>8/10 average quality score</li></br>
+		<li>96% of orders delivered on time</li></br>
+		<li>Moneyback guarantee</li></br>
+	</ul>
+	</td>
+	<td id="center">
+		<h4>How it Works?</h4>
+	<ul>
+		<li>Sign up</li></br>
+		<li>Place the Order of your choice</li></br>
+		<li>Pay for the Order</li></br>
+		<li>Sit and Wait for an A+ Paper</li></br>
+		<li>Review Delivered Paper</li></br>
+		
+	</ul>
+	</td>
+</tr>
+</table>
 The network of writers under the academicwriters.com will respond quickly to your custom writing requirements and ensure that you get professional writing services. Originality is one of key pillars of our custom writing services, which ensures that you get plagiarism-free papers written from scratch by Master's and P.H.D holders. To guarantee that your paper is 100% plagiarism-free, we use several plagiarism detection tools and software such as plagiarismsearch.com and turnitin.com. Our second objective concerns the custom paper content in the context of the customer's instructions. The network of writers at theacademicwriters.com is dedicated to responding to all the instructions of your paper and deliver and A+ custom paper. Place an order today at the academicwriters.com and have a trustworthy partner take care of your research and writing tasks. You can preview the cost of buying a custom essay from theacademicwriters.com using the calculator on our <large> <%=link_to "Pricing", pricing_path %></large> page.
-</div>
+

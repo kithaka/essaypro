@@ -1,39 +1,13 @@
 
 <%= stylesheet_link_tag  "pages", media: "all" %> 
-    <div class="banner">
-        <div class="logo">
-    <b>Theacademicwriters</b>
+<div id="elixirs">
+<% unless signed_in?%>
+<div id="login">
+    <%= render :file => 'sessions/new' %>
 </div>
-    </div>
-    <div id='cssmenu'>
-    <ul>
-    <% if signed_in?%>
-    <li><%=link_to "Account", current_user %></li>
-    <% else %>
-    <li class="active"><%=link_to "Home", root_path %></li>
-    <% end %>
-    <li><%=link_to "Order Now", order_now_path %></li>
-    <li><%=link_to "Pricing", pricing_path %></li>
-    
-    <li><a href="op.html">Testimonials</a></li>
-    <li><a href="#">Sample Paper</a></li>
-    <li class='last'><a href="st.html">Contact Us</a></li>
-    
-    </ul>
-</div>
-<div class="maincolumn_full">
-<h4><em>Our Prices!</em></h4>
-Theacademicwriters.com is a trustworthy custom writing agency with a 100% money back guarantee. Our policy thrives on the assurance that our custom writing services will always respond to your paper requirements. We acknowledge the challenges associated with buying custom papers and will ensure that you get value for your money.  You can buy any type of custom essay from the academicwriters.com cheaply and still have the guarantee of an A+ custom paper. 
-Theacademicwriters.com places emphasis on the quality of the agency's custom writing services and has a support team that works 24/7 to ensure that all custom essays align with the customer's essay help concerns. 
-Theacademicwriters.com pricing strategy considers that most of our custom essay clients are students whose financial wellbeing cannot allow them to pay for highly priced essay writing services. We sell high quality custom papers while ensuring that students in all academic levels, high school to doctoral, can get all the necessary help with essay writing. Theacademicwriters.com charges as low as 10$/275 words depending on the paper's urgency and academic level. The advantage of buying an essay from theacademicwriters.com is that our prices are negotiable and flexible to fit the customer's financial standing and custom paper requirements.
-
-</div>
-
-<%#unless signed_in? %>
-<div class="side">
-    Contract negotiation is an art and science that necessitates education, continuous training and diverse experience. Acquisition of negotiation skills requires the substantive understanding of the contract law and procedures of a contract. Skilled and experienced negotiators make significant contribution to the performance of an organization. The process of contract negotiation demands adequate time and effort for preparation in order to formulate a definitive and defensible negotiation position. 
-</div>
-<div class="features">
+  <% end %>
+  <p></p>
+<div id="features">
     <h4><span class="btn btn-large btn btn-info">Topics Covered</span></h4>
         <ul>
    <li>Art and Design</li>
@@ -53,27 +27,32 @@ Theacademicwriters.com pricing strategy considers that most of our custom essay 
     <li>...and Others!</li>
 </ul>
 </div>
+<p></p>
+<div id="features">
+<h4><span class="btn btn-large btn btn-info">Service Features</span></h4>
+        <ul>
+
+   <li>FREE amendments</li>
+    <li>FREE bibliography page</li>
+    <li>FREE title page</li>
+    <li>FREE Plagiarism report</li>
+    <li>FREE Formatting</li>
+    <li>100% original papers</li>
+    <li>275 words per page</li>
+    <li>Any citation style</li>
+    <li>Guaranteed Privacy</li>
+    <li> 24/7 customer support</li>
+    <li>...and Others!</li>
+</ul>
+</div>
 
 <div class="payments">
-    <h3><em>Our Quality</em></h3>
-    <span>*Our large pool of writers allows us to respond to all types of assignments and discplines</span></br>
-    <p></p>
-<span></span></br>
-    <span>*Our custom papers are plagiarism free...We check all papers with plagiarism detection software</span></br>
-    <span></span></br>
-    <p></p>
-    <span>*8 out of 10 average quality score</span></br>
-    <p></p>
-    <span></span></br>
-    <span>*96% of orders delivered on time</span></br>
-    <p></p>
 </div>
-<div class="lowercolumn2">
+</div>
 <h4><em>Our Prices!</em></h4>
-When you buy a custom paper from theacademicwriters.com, you will get all the order details inclusive of the total price. Our strategy for pricing custom essays depends on the paper's urgency, academic level, type of spacing and number of pages. The variation in the charges for our custom writing services arises from the fact that we assign different levels and types of academic papers to writers who specialize in the specified fields. Our free custom writing services include plagiarism check, proofreading and editing of your custom essay. Theacademicwriters.com offers pocket-friendly yet professional custom writing services. Place an order today and experience a combination of quality, professionalism and fast turnaround at theacademicwriters.com
-</div>
-
-
+Theacademicwriters.com is a trustworthy custom writing agency with a 100% money back guarantee. Our policy thrives on the assurance that our custom writing services will always respond to your paper requirements. We acknowledge the challenges associated with buying custom papers and will ensure that you get value for your money.  You can buy any type of custom essay from the academicwriters.com cheaply and still have the guarantee of an A+ custom paper. 
+Theacademicwriters.com places emphasis on the quality of the agency's custom writing services and has a support team that works 24/7 to ensure that all custom essays align with the customer's essay help concerns. 
+Theacademicwriters.com pricing strategy considers that most of our custom essay clients are students whose financial wellbeing cannot allow them to pay for highly priced essay writing services. We sell high quality custom papers while ensuring that students in all academic levels, high school to doctoral, can get all the necessary help with essay writing. Theacademicwriters.com charges as low as 10$/275 words depending on the paper's urgency and academic level. The advantage of buying an essay from theacademicwriters.com is that our prices are negotiable and flexible to fit the customer's financial standing and custom paper requirements.
 <div class="pricing">
 <form action="" id="priceform" onsubmit="return false;">
    <fieldset>
@@ -261,4 +240,10 @@ When you buy a custom paper from theacademicwriters.com, you will get all the or
     </fieldset>
 </form>
 </div>
+
+
+<h4><em>Our Prices!</em></h4>
+When you buy a custom paper from theacademicwriters.com, you will get all the order details inclusive of the total price. Our strategy for pricing custom essays depends on the paper's urgency, academic level, type of spacing and number of pages. The variation in the charges for our custom writing services arises from the fact that we assign different levels and types of academic papers to writers who specialize in the specified fields. Our free custom writing services include plagiarism check, proofreading and editing of your custom essay. Theacademicwriters.com offers pocket-friendly yet professional custom writing services. Place an order today and experience a combination of quality, professionalism and fast turnaround at theacademicwriters.com
+
+
 

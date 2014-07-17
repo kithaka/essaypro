@@ -1,227 +1,124 @@
 @import "bootstrap";
 
-html {
-  height: 90%;
-}
 
 body {
-	color: #6E7176;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	background-color: #F5F5F4;
-margin: 2%;
+color: #85ADAD;
+background-color:#F5F5F4;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: small;
+margin: 3%;
+padding-right: 3%;
+line-height: 1.8em;
 }
 
-.space{
-	height: 300px;
-}
-.spacetwo{
-	height: 400px;
-}
-.signup span{
-	font-size: large;
-	color: white;
-	background: url("blue.png") repeat-x;
-	border:1px dotted;
-border-radius:10px;
-}
-
-#notice {
-top: 20%;
-width: 30%;
-position: absolute;
-left: 5%;
-        color: #000;
-        border: 2px solid red;
-        padding: 1em;
-        margin-bottom: 2em;
-        background-color: white;
-        font: bold medium sans-serif;
-}
-
-input.button { cursor: pointer; }
-
-/*****************************************/
-/*** Template specific layout elements ***/
-/*****************************************/
-
-
-.banner {
+.top {
 background-color: #3399CC;
 margin: 1%;
-height: 13%;
-	position: absolute;
-	left: 25%;
-	top: 0%;
-	width: 69%;
-	text-align: center;
-	color: #F2F2EB;
-	background: url("black.png") repeat-x;
-	background-size: 100%;
+height: 120px;
 }
-.logo{
+#logo{
 position: absolute;
-background: gray;
-left: 1%;
-width: 50%;
-font-size: 200%;
+color: white;
+background: url("black.png") repeat-x;
+background-size: 100%;
+font-size: 300%;
 border: 2px thin solid;	
-border-radius: 5px;
 
 }
-footer {
-background: url("footer.png") repeat-x;
-top: 165%;
-position: absolute;
-height: 70%;
-width: 95%;
-margin: 5%;
-margin: 5px 5px 5px 5px;
-color: #efe5d0;
+
+nav {
+  color: #fff;
+margin: 10px 10px 0px 10px;
+height: 50px;
+}
+nav ul {
+margin: 0px;
+list-style-type: none;
+padding: 5px 0px 5px 0px;
+}
+nav ul li {
+display: inline;
+padding: 5px 10px 5px 10px;
+font-size: large;
+font-style: bold;
+color: white;
+font-family: Verdana, Helvetica, Arial,sans-serrif;
+}
+nav ul li.selected {
+background-color: #c8b99c;
+}
+nav ul a:hover {
+color: black;
+}
+
+#elixirs{
+width: 25%;
+float: left;
 text-align: center;
-font-size: 12px;
-border-radius: 10px;
-}
+line-height: 1;
+marigin: 5%;
+padding-right: 20px;
+padding-bottom: 20px;
 
-.center1 {
-	position: absolute;
-	top: 68%;
-	left: 25%;
-	width: 22%;
-	margin: 1%;
-	line-height: 1.3em;
 
 }
-.center2{
-position: absolute;
-	top: 68%;
-	left: 48%;
-	margin: 1%;
-	width: 22%;
-	line-height: 1.3em;
-	color: black;
+#elixirs h2 {
+color: black;
+}
+#elixirs h3 {
+color: #d12c47;
 }
 
-.center3{
-position: absolute;
-	top: 68%;
-	left: 72%;
-	margin: 1%;
-	width: 22%;
-	line-height: 1.3em;
-	}
 
-.rightcolumn{
-margin: 1%;
-	line-height: 1.5em;
-	font-size: small;
-	background: #F2F2EB;
-	border: 1px dotted;
-border-radius:10px;
-border-bottom: transparent;
-top: 22%;
-position: absolute;
-right: 4%;
+#features{
 padding-left: 1em;
 padding-bottom: 1em;
-}
-
-.centers{
-	border:1px solid blue;
-	border-radius:10px;
-}
-
-.side {
-	position: absolute;
-	top: 5%;
-	padding: 0;
-	margin: 10px;
-	width: 18%;
-	height: 30%;
-	line-height: 1.3em;
-	font-size: small;
-	background: #F2F2EB;
-border-radius:1px;
-background: url("content.png");
-text-indent: -9999px; 
-white-space: nowrap;
-}
-.features{
-position: absolute;
-top: 60%;
-padding-left: 1em;
-padding-bottom: 1em;
-border:1px solid gray;
+border:2px dotted white;
 	border-radius:5px;
-}
-
-.features ul li{
+	text-align:left;
+line-height: 1.3em;
+font-size: small;
+	ul li{
 	list-style: circles;
+	color: #4DB84D;
+	}
 }
 	.payments{
-	position: absolute;
-	top: 118%;
-	width: 18%;
 background: url("payments.gif") repeat no-repeat;
 text-indent: -9999px; 
 white-space: nowrap;
 
 color: transparent;
 }
-.maincolumn_full {
-position: absolute;
-margin: 7%;
-top: 13%;
-left: 19%;
-	font-size: small;
-	line-height: 2em;
-	font-family: Georgia,Arial,sans-serif;
-	padding: 1%;
-}
-.lowercolumn {
-position: absolute;
-margin: 7%;
-top: 102%;
-left: 19%;
-	font-size: small;
-	padding: 1%;
-	line-height: 2em;
-	font-family: Georgia,Arial,sans-serif;
-}
-.lowercolumn2 {
-position: absolute;
-margin: 7%;
-top: 90%;
-left: 19%;
-padding: 1%;
-	font-size: small;
-	line-height: 2em;
-	font-family: Georgia,Arial,sans-serif;
-}
+#login{
+padding: 0;
+line-height: 1.3em;
+font-size: medium;
+text-align: left;
+margin: 2%;
 
-    .login{
-    position: absolute;
-    top: 32%;
-	left: 0%;
-	padding: 0;
-	margin: 2%;
-	width: 50%;
-	line-height: 1.3em;
-	font-size: medium;
+}
+#login form input{
+width: 100%;
+border:1px thin solid;
+
+}
+#center{
+	background-color: white;
+	margin: 1%;
+	ul li {
+	color: brown;
 	}
-.login form input{
-width: 80%;
-	border:1px thin solid;
-
+}
+#centeriz{
+	padding: 5%;
 }
 .pricing {
-	position: absolute;
-	top: 70%;
-	left: 17%;
-	line-height: 1.3em;
-	margin: 7%;
-	width:68.5%;
+
+line-height: 1.3em;
+margin: 3%;
 }
 .pricing legend{
-	text-align: center;
-	font-size: 120%;
+text-align: center;
+font-size: 120%;
 }

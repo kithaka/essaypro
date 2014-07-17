@@ -1,29 +1,5 @@
 
 <%= stylesheet_link_tag  "orders", media: "all" %>
-<div class="upperpart">
-	<p>Theacademicwriters</p>
-<p>weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-<p>weeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-</div>
-</div>
-<div id='cssmenu'>
-	<ul>
-
-    <li class="active"><%=link_to "Home", root_path %></li>
-    <li><%=link_to "Order Now", order_now_path %></li>
-    <li><%=link_to "Pricing", pricing_path %></li>
-    
-    <li><a href="op.html">Testimonials</a></li>
-    <li><a href="#">Sample Paper</a></li>
-    <li class='last'><a href="st.html">Contact Us</a></li>
-    </ul>
-</div>
-<div class="upperbar">
-	<ul>
-    <li>Welcome: <%=current_user.firstname%></li>
-    <li>The Time is <%=Time.now%></li>
-    
-</div>
 
 <div class="account">
 	<% if signed_in? %>

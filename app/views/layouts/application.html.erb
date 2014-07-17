@@ -2,18 +2,36 @@
 <html>
 <head>
   <title>Essaypros</title>
-  <%= stylesheet_link_tag "menu", media: "all" %>
+  <%= stylesheet_link_tag "pages", "menu", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div  class="login">
-  <% unless signed_in?%>
-	<%= render :file => 'sessions/new' %>
-  <% end %>
+	<header class="top">
+		<div id="logo">
+<img src="images/logo.png" alt="Theacademicwriters.com">
 </div>
-
-<%#=render 'layouts/header' %>
-<%= yield %>
+</header>
+<div id="cssmenu">
+<nav>
+<ul>
+	<% if signed_in?%>
+    <li><%=link_to "Account", current_user %></li>
+    <%else %>
+    <li></li>
+    <li></li>
+    <li class="active"><%=link_to "Home", root_path %></li>
+    <% end %>
+    <li><%=link_to "Order Now", order_now_path %></li>
+    <li><%=link_to "Pricing", pricing_path %></li>
+    
+    <li><a href="op.html">Sample Papers</a></li>
+    <li><a href="#">Blog</a></li>
+    <li class='last'><a href="st.html">Contact Us</a></li>
+</ul>
+</nav>
+</div>
+  
+  <%= yield %>
 </body>
 </html>
