@@ -2,50 +2,98 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
-
-/* styled form */
-size{
-	margin: 3%;
-}
 body {
-	color: #333;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	background-color: #F5F5F4;
-margin: 2%;
-}
-form {
-width: 50%;
-display: table;
-padding: 10px;
-position: absolute;
-top: 18%;
-left: 30%;
-}
-form textarea {
-width: 90%;
-}
-form input{
-margin-bottom: 5%;
-width: 80%;
-font-size: 135%;
-	border:1px line;
-}
-form select{
-	width: 80%;
-	margin-bottom: 5%;
-	font-size: 135%;
+color: #85ADAD;
+background-color:#F5F5F4;
+font-family: Georgia, "Times New Roman", Times, serif;
+font-size: small;
+margin: 3%;
+padding-right: 3%;
+line-height: 1.8em;
 }
 
-#error_explanation {
-color: #f00;
-position: absolute;
-top: 50px;
-left: 700px;
+.top {
+margin: 1%;
+height: 300%;
 }
-#error_explanation ul {
-list-style: none;
-margin: 0 0 18px 0;
+#logo{
+background: url("banner.png") no-repeat;
+background-size: 45%;
+border: 2px thin solid;	
+position: relative;
+left: 10%;
 }
+
+nav {
+  color: #fff;
+margin: 10px 10px 0px 10px;
+height: 50px;
+}
+nav ul {
+margin: 0px;
+list-style-type: none;
+padding: 5px 0px 5px 0px;
+}
+nav ul li {
+display: inline;
+padding: 5px 10px 5px 10px;
+font-size: large;
+font-style: bold;
+color: white;
+font-family: Verdana, Helvetica, Arial,sans-serrif;
+}
+nav ul li.selected {
+background-color: #c8b99c;
+}
+nav ul a:hover {
+color: black;
+}
+
+#elixirs{
+width: 25%;
+float: left;
+text-align: center;
+line-height: 1;
+marigin: 5%;
+padding-right: 20px;
+padding-bottom: 20px;
+
+
+}
+#elixirs h2 {
+color: black;
+}
+#elixirs h3 {
+color: #d12c47;
+}
+
+
+#features{
+padding-left: 1em;
+padding-bottom: 1em;
+border:2px dotted white;
+	border-radius:5px;
+	text-align:left;
+line-height: 1.3em;
+font-size: small;
+	ul li{
+	list-style: circles;
+	color: #4DB84D;
+	}
+}
+
+#account{
+	background: white;
+	text-align: left;
+	border-radius: 6px;
+}
+
+#account ul li{
+	text-align: left;
+	font-size: 140%;
+	
+}
+
 div.tableRow {
 display: table-row;
 clear: both;
@@ -61,144 +109,17 @@ text-align: right;
 p.heading {
 font-weight: bold;
 }
-.depot_form fieldset {
 
-}
-.depot_form legend {
-color: #dfd;
-background: #141;
-font-family: sans-serif;
-
-}
-.depot_form label {
-width: 5em;
-float: left;
-text-align: right;
-padding-top: 0.2em;
-margin-right: 0.1em;
-display: block;
-}
-.depot_form select, .depot_form textarea, .depot_form input {
-margin-left: 0.5em;
-}
-.depot_form .submit {
-margin-left: 4em;
-}
-.depot_form div {
-margin: 0.5em 0;
-}
-
-label {
-	 text-shadow: 0px 1px 0px #f2f2f2;
-}
-#contact {
-border: 0.5px solid black;
-border-radius:10px;
-	 margin: 60px auto; padding: 60px 30px;
-	background: #c9d0de; border: 1px solid #e1e1e1;
-	-moz-box-shadow: 0px 0px 8px #444;
-	-webkit-box-shadow: 0px 0px 8px #444;
-}
-.gurantee{
-background: url("payments.gif") repeat no-repeat;
-width: 75%;
-color: transparent;
-}
-.guarantee{
-margin: 10px;
-	width: 11%;
-	line-height: 1.5em;
-	font-size: 12px;
-	background: #F2F2EB;
-	border: 1px dotted;
-border-radius:10px;
-border-bottom: transparent;
-top: 50%;
-position: absolute;
-right: 13%;
-padding-left: 1em;
-padding-bottom: 1em;
-background: url("verified.jpg") repeat-x;
-color: transparent;
-}
-.guarantee1{
-margin: 10px;
-	width: 18%;
-	line-height: 1.5em;
-	font-size: 12px;
-	background: #F2F2EB;
-	border: 1px dotted;
-border-radius:10px;
-border-bottom: transparent;
-top: 20%;
-position: absolute;
-right: 9%;
-padding-left: 1em;
-padding-bottom: 1em;
-background: url("guaranteed.png") repeat-x;
-color: transparent;
-}
-.gurantee1{
-background: url("black.png") repeat-x;
-font-family: "Times New Roman";
-text-align: center;
-
-font-size: large;
-
-}
-.guarantee2{
-	line-height: 1.5em;
-	font-size: 12px;
-	background: #F2F2EB;
-	border: 1px dotted;
-border-radius:10px;
-border-bottom: transparent;
-top: 85%;
-position: absolute;
-left: 6%;
-padding-left: 1em;
-padding-bottom: 1em;
-background: url("badge-guarantee.gif") repeat no-repeat;
-color: transparent;
-}
-.guide{
-width: 21%;
-top: 60%;
-position: absolute;
-left: 2%;
-padding-left: 1em;
-padding-bottom: 1em;
-border: 1px dotted;
-border-radius:10px;
-line-height: 1em;
-background: #FFE8FF;
-}
-.guide h4{
-	color: green;
-	text-align: center;
-}
-.show{
-	position: absolute;
-	right: 10%;
-	width: 60%;
-	top: 28%;
-	font-size: medium;
-	padding-left: 15px;
-	background-color: #FFFFFF;
-	line-height: 2em;
-	border-top: thin solid #675c47;
-	border-bottom: thin solid #675c47;
-	border-left: thin solid #675c47;
-	border-radius: 15px;
-}
-.show table {
+#show table {
+width: 60%;
 border-collapse: collapse;
 caption-side: top;
-width: 95%;
+font-size: large;
 }
 th, td{
 border: 0px solid black;
-padding: 5px;
+font-size: large;
+padding: 3%;
 }
  th {
 background-color: #FFD6F5;
@@ -206,141 +127,23 @@ background-color: #FFD6F5;
 tr:nth-child(odd) {
 background-color: #DAF3FF;
 }
-
-caption {
-font-style: italic;
-padding-top: 10px;
-}
-.upperbar{
-	position: absolute;
-	top: 5%;
-	left: 40%;
-	background: url("bg.png") repeat-x;
-
-}
-.upperbar ul {
-margin: 0px;
-list-style-type: none;
-padding: 5px 0px 5px 0px;
-}
-.upperbar ul li {
-padding: 5px 10px 5px 10px;
-font-size: large;
-font-style: bold;
-color: black;
-font-family: Verdana, Helvetica, Arial,sans-serrif;
-}
-.upperbar ul li.selected {
-background-color: #c8b99c;
-}
-
-.orderdetails{
-	position: absolute;
-	top: 20%;
-	left: 15%;
-background: url("bg.png") repeat-x;
-}
-.orderdetails ul {
-margin: 0px;
-list-style-type: none;
-padding: 5px 0px 5px 0px;
-}
-.orderdetails ul li {
-display: inline;
-padding: 5px 10px 5px 10px;
-font-size: large;
-font-style: bold;
-color: white;
-font-family: Verdana, Helvetica, Arial,sans-serrif;
-}
-.orderdetails ul li.selected {
-background-color: #c8b99c;
-}
-.upperpart{
-position: absolute;
-top: 1%;
-left:0%;
-width: 100%;
-background: url("background.png") repeat-x;
-background-size: 100%;
-color: white;
-font-size: 150%;
-text-align: center;
-text-indent: -9999px; 
-white-space: nowrap;
-
-}
-.upperpart span{
-text-indent: -9999px; 
-white-space: nowrap;
-}
-
-.account{
-background: white;
-text-align: center;
-	position: absolute;
-	width: 22%;
-top: 28%;
-left: 6%;
-color: blue;
-border: 0.5px solid black;
-border-radius:10px;
-}
-.account ul li{
-	text-align: left;
-	font-size: 140%;
-}
-.account h1{
-	border-bottom: dotted;
-	color: blue;
-	font-size: 70%;
-	text-align: center;
-}
-.uploads {
-color: #000;
-
-margin-bottom: 2em;
-}
-.uploads form input{
-width: 10%;
-	border:1px thin solid;
-}
-
-.free{
-position: absolute;
-top: 110%;
-width: 22%;
-left: 6%;
-padding-left: 1em;
-padding-bottom: 1em;
-border:1px solid gray;
-	border-radius:5px;
-	color: blue
-}
-
-.free ul li{
-	list-style: circles;
-}
 .message{
-    position: absolute;
-    top: -6%;
-	left: 35%;
-	padding: 0;
-	width: 100%;
-	line-height: 1em;
-	font-size: small;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	}
+padding: 0;
+width: 60%;
+line-height: 1em;
+font-size: small;
+font-family: Georgia, "Times New Roman", Times, serif;
+}
 .message form input{
-width: 100%;
-	border:1px thin solid;
+width: 60%;
+border:1px thin solid;
 }
 .message form textarea{
-	width: 100%;
+width: 60%;
 }
 .message{
 
-	th, td{
+th, td{
 border: 0px solid black;
 }
  th {
@@ -351,37 +154,14 @@ background-color: transparent;
 }
 }
 #notice{
-	font-size: large;
-	color: green;
+font-size: large;
+color: green;
 }
 #read_messages
 {
-	position: absolute;
-    top: -4%;
-	left: 0%;
-	padding: 0;
-	width: 45%;
-	line-height: 1em;
-	font-size: small;
-	font-family: Georgia, "Times New Roman", Times, serif;
-}
-
-.stats {
-overflow: auto;
-a {
-float: left;
-padding: 0 10px;
-color: gray;
-&:first-child {
-padding-left: 0;
-border: 0;
-}
-&:hover {
-text-decoration: none;
-color: blue;
-}
-}
-strong {
-display: block;
-}
+padding: 0;
+width: 45%;
+line-height: 1em;
+font-size: small;
+font-family: Georgia, "Times New Roman", Times, serif;
 }
