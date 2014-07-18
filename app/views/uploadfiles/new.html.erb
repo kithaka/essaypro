@@ -11,19 +11,14 @@
   <table>
     <tr>
       <td><b>Upload files</b></td>
-    </tr>
 <%= form_for([@order, @order.uploadfiles.new]) do |f| %>
-<tr>
-    <td> <%= f.text_field :name, :placeholder=>"Filename" %></td>
-  </tr>
-  <tr>
-    <td><%= f.file_field :attachment, :cols => "20", :placeholder=>"Upload File Here" %></td>
-  </tr>
-  <tr>
-    <td><%=f.submit "Upload", :class=>"btn btn-large btn-primary"%></td>
-</tr>
+    <td> <%= f.text_field :name, :size=>"15", :placeholder=>"Filename" %></td>
+    <td><%= f.file_field :attachment, :placeholder=>"Upload File Here" %></td>
+    <td><%=f.submit "Upload"%></td>
 
+    
 <% end %>
+</tr>
 </table>
 
 

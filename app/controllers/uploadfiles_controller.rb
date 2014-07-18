@@ -18,7 +18,7 @@ class UploadfilesController < ApplicationController
       if @uploadfile.save
         format.html { redirect_to @order, notice: 'file was successfully uploaded.' }
       else
-        format.html { render action: "new" }
+        format.html { redirect_to @order, notice: 'Check upload fields.' }
       end
     end
   end

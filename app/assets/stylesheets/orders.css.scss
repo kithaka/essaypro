@@ -174,10 +174,9 @@ background-color: white;
 .messages tr{
 	border-bottom: 3px solid black;
 }
-#uploads td{
-font-size: 80%;
-background-color: transparent;
+#uploads tr{
+	background-color: transparent;
 }
-#uploads td input {
-	width: 200%;
+#uploads td{
+	font-size: medium;
 }

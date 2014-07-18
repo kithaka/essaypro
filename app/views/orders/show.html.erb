@@ -116,19 +116,15 @@
 <td>$<%=@total_price%></td>
 </tr>
 <tr>
-<td>Instructions</td>
-<td><%= @order.instructions %> </td>
+	<td><%= @order.instructions %> </td>
 <td><% unless @order.purchased_at %>
 <td ><%=link_to image_tag("Paypal.png", :alt=>"Buy With PayPal"), @order.paypal_url(order_url, payment_notifications_url)%> </td>
 <% end %>
-</td>
-<td></td>
-<tr>
-<td id="uploads">
-<%= render :file => 'uploadfiles/new' %>
-</td>
 </tr>
-<tr>
+</table>
+</div>
+<div id="uploads">
+<%= render :file => 'uploadfiles/new' %>
 <% if @order.uploadfiles%>
 <td> <% @order.uploadfiles.each do |uploadfile| %>
 	<span><%= uploadfile.name %></span>:
@@ -136,7 +132,5 @@
     <% end %>
 </td>
 <% end %>
-</tr>
-</table>
 </div>
 
