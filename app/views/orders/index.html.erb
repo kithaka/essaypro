@@ -1,79 +1,54 @@
 <%= stylesheet_link_tag  "orders", media: "all" %>
-<div class="upperpart">
-    <p>Theacademicwriters</p>
-    <p>
-weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-<p>weeeeeeeeeeeeeeeeeeeeeeeeeeee</br>
-</span>
-</div>
-<div id='cssmenu'>
-    <ul>
-    <li class="active"><%=link_to "Home", root_path %></li>
-    <li><%=link_to "Order Now", order_now_path %></li>
-    <li><%=link_to "Pricing", pricing_path %></li>
+<p id="notice"><%= notice %></p>
     
-    <li><a href="op.html">Testimonials</a></li>
-    <li><a href="#">Sample Paper</a></li>
-    <li class='last'><a href="st.html">Contact Us</a></li>
-    </ul>
-</div>
-
-<div class="upperbar">
-    <ul>
-    <li>Welcome: <%=current_user.firstname%></li>
-    <li>The Time is <%=Time.now%></li>
-
-</div>
-<div class="account">
+<div id="elixirs">
+    <div id="account">
     <ul>
         <h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
+        <li>Welcome: <%=current_user.firstname %></li></br>
         <li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
-        <li><%= link_to 'messages', '#' %></li></br>
+        <li><%= link_to 'messages', '#'%></li></br>
         <% if current_user.admin %>
-        <li><%= link_to "New Orders", orders_url%></li></br>
+        <li><%= link_to "Orders", orders_url %></li></br>
         <% else %>
-        <li><%= link_to "New Orders", current_user%></li></br>
+        <li><%= link_to "My Orders", current_user%></li></br>
         <% end %>
-        <li><%= link_to 'processing_orders', '#'%></li></br>
-        <li><%= link_to 'complete_orders', '#'%></li></br>
-        <li><%= link_to 'revisions', '#'%></li></br>
+        <li><%= link_to 'processing_orders', '#'%></li></br> 
+        <li><%= link_to 'complete_orders', '#'%>|
+        </li></br>
+        
+        <li><%= link_to 'revisions', '#'%>|
+        </li></br>
         <li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
     </ul>
 </div>
-<div class="guarantee2">
-    <h3>PayPal Verified</h3>
-    <span>1. Fill our sign up form and place your order</span></br>
-    <p></p>
-    <span>2. Log in to your account and pay for the order</span></br>
-    <p></p>
-    <span>3. Trace your order progress</span></br>
-    <p></p>
-    <span>Fill our sign up form and place your order</span></br>
-    <p></p>
-    <span>Log in to your account and pay for the order</span></br>
-    <p></p>
-    <span>Trace your order progress</span></br>
-    <p></p>
-    <span>Fill our sign up form and place your order</span></br>
-    <p></p>
-</div>
-<div class="free">
-    <h4 class="btn btn-large btn btn-info">Service Features</h4>
+    
+<p></p>
+<div id="features">
+<h4><span class="btn btn-large btn btn-info">Service Features</span></h4>
         <ul>
 
    <li>FREE amendments</li>
     <li>FREE bibliography page</li>
     <li>FREE title page</li>
     <li>FREE Plagiarism report</li>
-    <li> FREE Formatting</li>
+    <li>FREE Formatting</li>
     <li>100% original papers</li>
     <li>275 words per page</li>
     <li>Any citation style</li>
     <li>Guaranteed Privacy</li>
-    <li>24/7 customer support</li>
+    <li> 24/7 customer support</li>
+    <li>...and Others!</li>
 </ul>
 </div>
-<div class="show">
+<div id="payments">
+    <h3>PayPal Verified</h3>
+    <p>You dont need a credit card</p>
+    <p>You can Pay for our services via PayPal</p>
+    <p>Your transaction will process within minutes</p>
+</div>
+</div>
+<div id="show">
     <%=will_paginate @orders%>
 <%@orders.each do |order| %>
 

@@ -3,9 +3,11 @@
 	<div id="account">
 	<ul>
 		<h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
+		<li>Welcome: <%=current_user.firstname %></li></br>
 		<li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
 
-		<li><%= link_to 'messages', '#'%>|<span class="badge badge-important">
+		<li><%=link_to "Messages", order_messages_path(@order, :format=>:js),
+	:remote=>true, :id=>'read_message_link' %>|<span class="badge badge-important">
 			<%=@order.messages.count(:sender) %></span></li></br>
 		<% if current_user.admin %>
 		<li><%= link_to "Orders", orders_url%></li></br>
@@ -29,7 +31,7 @@
 		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
 	</ul>
 </div>
-	
+
 <p></p>
 <div id="features">
 <h4><span class="btn btn-large btn btn-info">Service Features</span></h4>
@@ -48,18 +50,32 @@
     <li>...and Others!</li>
 </ul>
 </div>
+<div id="payments">
+	<h3>PayPal Verified</h3>
+	<p>You dont need a credit card</p>
+	<p>You can Pay for our services via PayPal</p>
+	<p>Your transaction will process within minutes</p>
 </div>
-<div class="show">
+</div>
+<div id="show2">
 <p id="notice"> <%=notice %></p>
 <table>
   <caption>
-
+<b>
+<% if @order.states.count(:complete) - @order.states.count(:revision) >0%>
+            <span class="badge badge-important">Complete</span>
+<% end %>
+</b>
+<b>
+<% if @order.states.count(:complete)>0 %>
+            <% if @order.states.count(:complete) - @order.states.count(:revision)==0 %>
+            <span class="badge badge-important">Revision</span>
+            <% end %>
+    <% end %>
+</b>
     <b id="topic"><%= @order.topic %></b>
     <b><%=link_to "Send A Message", new_order_message_path(@order, :format=>:js),
 	:remote=>true, :id=>'new_message_link', :class=>"btn btn-small btn-primary"  %></b>
-
-	<b><%=link_to "Read Message", order_messages_path(@order, :format=>:js),
-	:remote=>true, :id=>'read_message_link', :class=>"btn btn-large btn-primary"  %></b>
 	<% if current_user.admin %>
 	<b><%=link_to "Mark as Complete", new_order_state_path(@order, :format=>:js),
 	:remote=>true, :id=>'request_link', :class=>"btn btn-large btn-primary"  %></b>
@@ -67,6 +83,7 @@
 	<b><%=link_to "Request Revision", new_order_state_path(@order, :format=>:js),
 	:remote=>true, :id=>'request_link', :class=>"btn btn-large btn-primary"  %></b>
 	<% end %>
+
 	</caption>
 <tr>
 <th> Deadline:</th>
@@ -107,16 +124,17 @@
 </td>
 <td></td>
 <tr>
-<td class="uploads">
+<td id="uploads">
 <%= render :file => 'uploadfiles/new' %>
 </td>
-<td>Attachements: <%=@order.uploadfiles.count%></td>
 <% if @order.uploadfiles%>
-	<td> <% @order.uploadfiles.each do |uploadfile| %>
-        <span><%= uploadfile.name %></span></br>
-        <span><%= link_to "Download file", uploadfile.attachment_url %></span>
+<td> <% @order.uploadfiles.each do |uploadfile| %>
+	<span><%= uploadfile.name %></span>:
+	<span><%= link_to "Download file", uploadfile.attachment_url %></span></br>
     <% end %>
-    </td>
-    <% end %>
+</td>
+<% end %>
+</tr>
 </table>
+</div>
 

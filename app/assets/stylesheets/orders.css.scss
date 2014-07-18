@@ -51,11 +51,11 @@ color: black;
 
 #elixirs{
 width: 25%;
-float: left;
+float: right;
 text-align: center;
 line-height: 1;
 marigin: 5%;
-padding-right: 20px;
+padding-right: 10px;
 padding-bottom: 20px;
 
 
@@ -111,15 +111,16 @@ font-weight: bold;
 }
 
 #show table {
-width: 60%;
+width: 55%;
 border-collapse: collapse;
 caption-side: top;
-font-size: large;
+font-size: medium;
+margin-left: 13%;
 }
 th, td{
 border: 0px solid black;
 font-size: large;
-padding: 3%;
+padding: 2%;
 }
  th {
 background-color: #FFD6F5;
@@ -127,32 +128,7 @@ background-color: #FFD6F5;
 tr:nth-child(odd) {
 background-color: #DAF3FF;
 }
-.message{
-padding: 0;
-width: 60%;
-line-height: 1em;
-font-size: small;
-font-family: Georgia, "Times New Roman", Times, serif;
-}
-.message form input{
-width: 60%;
-border:1px thin solid;
-}
-.message form textarea{
-width: 60%;
-}
-.message{
 
-th, td{
-border: 0px solid black;
-}
- th {
-background-color: transparent;
-}
-tr:nth-child(odd) {
-background-color: transparent;
-}
-}
 #notice{
 font-size: large;
 color: green;
@@ -164,4 +140,43 @@ width: 45%;
 line-height: 1em;
 font-size: small;
 font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+#show2 table {
+width: 55%;
+border-collapse: collapse;
+caption-side: top;
+font-size: medium;
+margin-left: 6%;
+}
+#payments{
+background: url("payments.gif") no-repeat;
+text-indent: -9999px; 
+white-space: nowrap;
+}
+
+#message{
+
+th, td{
+border: 0px solid black;
+}
+ th {
+background-color: transparent;
+}
+tr:nth-child(odd) {
+background-color: transparent;
+}
+}
+.messages td{
+font-size: 100%;
+background-color: white;
+}
+.messages tr{
+	border-bottom: 3px solid black;
+}
+#uploads td{
+font-size: 80%;
+}
+#uploads td input {
+	width: 200%;
 }

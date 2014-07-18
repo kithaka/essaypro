@@ -1,12 +1,11 @@
 <%=stylesheet_link_tag  "orders", media: "all" %>
 <p id="notice"><%= notice %></p>
-
-    <%if current_user.orders.any? %>
     
 <div id="elixirs">
 	<div id="account">
 	<ul>
 		<h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
+		<li>Welcome: <%=current_user.firstname %></li></br>
 		<li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
 		<li><%= link_to 'messages', '#'%></li></br>
 		<% if current_user.admin %>
@@ -42,8 +41,14 @@
     <li>...and Others!</li>
 </ul>
 </div>
+<div id="payments">
+	<h3>PayPal Verified</h3>
+	<p>You dont need a credit card</p>
+	<p>You can Pay for our services via PayPal</p>
+	<p>Your transaction will process within minutes</p>
 </div>
-
+</div>
+<%if current_user.orders.any? %>
     <!--<h3>Orders (<%#=@customer.orders.count %>)</h3>-->
       <%=render @orders %>
       <% end %>

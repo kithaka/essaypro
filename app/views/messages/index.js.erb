@@ -1,4 +1,2 @@
 
-$("<%= escape_javascript render(:file=> 'messages/index.html.erb') %>").insertAfter('#topic');
-
-$('#read_messages_link').hide();
+$("#features").replaceWith("<%= escape_javascript render(:file=> 'messages/index.html.erb') %>");

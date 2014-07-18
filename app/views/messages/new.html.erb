@@ -1,6 +1,6 @@
 
-<div class="message">
-<%= form_for([@order, @order.messages.new], :html=>{:style=>'display: none;'}) do |f| %>
+<div id="message">
+<%=form_for([@order, @order.messages.new] ) do |f| %>
 <table>
   <tr>
     <% if current_user.admin %>
@@ -10,12 +10,12 @@
     <% end %>
   </tr>
   <tr>
-    <td><%= f.text_field :subject, :placeholder=>"Enter Message Subject"%></td>
+    <td><%= f.text_field :subject, :cols => "30", :placeholder=>"Enter Message Subject"%></td>
     
   </tr>
 
   </tr>
-  <td><%= f.text_area :body, :placeholder=>"Enter Message Here" %></td>
+  <td><%= f.text_area :body, :cols => "30", :rows => "10", :placeholder=>"Enter Message Here" %></td>
   
   
   </tr>

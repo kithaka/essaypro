@@ -1,29 +1,23 @@
 
-<script language="javascript" type="text/javascript">
-$(document).ready(function() {
-  $('#messages').click(function() {
-	 $('#read_messages').slideToggle(300);
-  }); // end click
-}); // end ready
-</script>
-<div id="messages">
-<div id="read_messages">
-<b class="btn btn-large btn btn-info"> [Click to Close]</b>
+
+<div class="messages">
+<b class="btn btn-large btn btn-default"><%= link_to "Close Messages", @order%></b>
 	<%@messages.each do |message| %>
 <table>
 	<% if message.sender %>
 	<tr>
-		<td class="alert alert-warning" role="alert">[<%=message.subject %>]:</td>
-		<td class="alert alert-warning" role="alert"><%=message.body%></td>
+		<td>Replies </td>
+		<td >[<%=message.subject %>]:</td>
+		<td ><%=message.body%></td>
 	</tr>
 	<%else %>
 	<tr>
-		<td class="alert alert-info" role="alert">[<%=message.subject %>]:</td>
-		<td class="alert alert-info" role="alert"><%=message.body%></td>
+		<td>Your messages</td>
+		<td >[<%=message.subject %>]:</td>
+		<td ><%=message.body%></td>
 
 	</tr>
 	<% end %>
 </table>
 <% end %>
-</div>
 </div>
