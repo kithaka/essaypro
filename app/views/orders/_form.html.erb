@@ -57,7 +57,7 @@
   </div>
 <div class="tableRow">
  <span><%= f.label :instructions %></span>
-      <span><%= f.text_area :instructions, :placeholder=>"Type Order Instructions" %></span>
+      <span><%= f.text_area :instructions, :cols => "40", :rows => "10", :placeholder=>"Type Order Instructions" %></span>
     </div>
   <div class="tableRow">
  <span><%= f.submit "Order Now", :class=>"btn btn-large btn-primary"%></span>
