@@ -127,6 +127,8 @@
 <td id="uploads">
 <%= render :file => 'uploadfiles/new' %>
 </td>
+</tr>
+<tr>
 <% if @order.uploadfiles%>
 <td> <% @order.uploadfiles.each do |uploadfile| %>
 	<span><%= uploadfile.name %></span>:
