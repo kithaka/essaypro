@@ -12,6 +12,7 @@
 <p>Theacademicwriters.com </p>
   <p>custom writing agency</p>
 </div>
+
 </header>
 <div id="cssmenu">
 <nav>
@@ -27,12 +28,17 @@
     <li><%=link_to "Pricing", pricing_path %></li>
     
     <li><a href="op.html">Sample Papers</a></li>
-    <li><a href="#">Blog</a></li>
+    <li><%= link_to "Blog",  articles_path %></li>
     <li class='last'><a href="st.html">Contact Us</a></li>
 </ul>
 </nav>
 </div>
-  
   <%= yield %>
+  <footer>
+&copy; Theacademicwriters
+<br>
+All trademarks and registered trademarks appearing on
+this site are the property of their respective owners.
+</footer>
 </body>
 </html>

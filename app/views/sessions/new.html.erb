@@ -1,7 +1,7 @@
 <div class="login">
-<% if flash[:notice] %>
-<p id="notice"><%= flash[:notice] %></p>
- <% end %>
+<% if notice %>
+<p id="notice"><%=notice%></p>
+<%end%>
  
 <%=form_for(:session, :url=>sessions_path) do |f|%>
 <table>
@@ -14,10 +14,14 @@
 <tr>
 	<td><%=f.password_field :password, :placeholder=>"Password" %></td>
 </tr>
+
 <tr>
 
 <td><%=f.submit "Sign in", :class=>"btn btn-large btn-primary"%></td>
 </tr>
+<tr>
+	<td><p><%= link_to "forgotten password?", new_password_reset_path %></p></td>
+</tr>    
 <% end %>
 <tr>
 <td> New Customer? <%=link_to "Signup", signup_path %></td></td>

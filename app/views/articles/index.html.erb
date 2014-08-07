@@ -1,0 +1,71 @@
+<%= stylesheet_link_tag "articles", media: "all" %>
+<div id="elixirs">
+<% unless signed_in?%>
+<div id="login">
+  <%= render :file => 'sessions/new' %>
+</div>
+  <% end %>
+  <p></p>
+<div id="features">
+  <h4><span class="btn btn-large btn btn-info">Custom Paper Writing Services</span></h4>
+    <ul>
+   <li>Essays</li>
+    <li>Term Papers</li>
+    <li>Research Papers </li>
+    <li>Thesis Papers</li>
+    <li>Dissertations</li>
+    <li>Assignments</li>
+    <li>Reviews</li>
+    <li>Presentations</li>
+    <li>Case Studies</li>
+    <li>Courseworks</li>
+    <li>Homeworks</li>
+    <li>Creative Writing</li>
+    <li>Critical Thinking</li>
+    <li>Annotated Bibliography</li>
+    <li>Proposal</li>
+    <li>Research Report</li>
+    <li>...and Others!</li>
+</ul>
+</div>
+<p></p>
+<div id="features">
+
+<h4><span class="btn btn-large btn btn-info">Advantages</span></h4>
+    <ul>
+   <li>30 Days Money Back Guarantee</li>
+    <li>Prices as low as 10$/page</li>
+    <li>We accept urgent orders</li>
+    <li>Experienced and capable writers</li>
+    <li>Plagiarism detection systems/software</li>
+    <li>No charges on revisions</li>
+    <li>We respond to all types of assignments</li>
+    <li>Flexible pricing and great discounts</li>
+    <li>...and Others!</li>
+</ul>
+</div>
+</div>
+<div id="index">
+  <div>
+<span class="btn btn-large btn btn-default"><h2><%=link_to "Buy Custom Essay", order_now_path %></span></h2>
+</div>
+<% @articles.each do |article| %>
+    <h3><u><%= article.title %></u></h3>
+    Published by <u><%= article.author %></u></br>
+    <u><%= article.published_at %></u></br>
+    <p></p>
+    <%= truncate article.body, :length => 1500 %></br>
+    <span class="btn btn-large btn btn-default"><h4><%= link_to 'Read More', article %></h4></span>
+    <p></p>
+    <span class="btn btn-large btn btn-default"><h3><%=link_to "Buy Similar Paper", order_now_path %></h3></span></br>
+    <% if signed_in? && current_user.admin %>
+    <span class="btn btn-large btn btn-default"><%= link_to 'Edit', edit_article_path(article) %></span></br>
+    <span class="btn btn-large btn btn-default"><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></span></br>
+    <% end %>
+<% end %>
+</table>
+<% if signed_in? && current_user.admin %>
+<span class="btn btn-large btn btn-default"><%= link_to 'New Article', new_article_path %></span>
+<% end %>
+</div>
+<p></p>

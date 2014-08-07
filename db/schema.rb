@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140715191608) do
+ActiveRecord::Schema.define(:version => 20140807094148) do
+
+  create_table "articles", :force => true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.text     "body"
+    t.datetime "published_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "customer_id"
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "firstname"
@@ -20,10 +30,12 @@ ActiveRecord::Schema.define(:version => 20140715191608) do
     t.string   "password_digest"
     t.string   "country"
     t.string   "contact"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "remember_token"
-    t.boolean  "admin",           :default => false
+    t.boolean  "admin",                  :default => false
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   create_table "markings", :force => true do |t|
@@ -65,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20140715191608) do
     t.decimal  "price"
     t.datetime "purchased_at"
     t.string   "spacing"
+    t.integer  "deadline"
   end
 
   create_table "orderstatuses", :force => true do |t|

@@ -23,7 +23,9 @@ border: 2px thin solid;
 position: relative;
 left: 10%;
 }
-
+#notice{
+	color: red;
+}
 nav {
   color: #fff;
 margin: 10px 10px 0px 10px;
@@ -111,11 +113,11 @@ font-weight: bold;
 }
 
 #show table {
-width: 55%;
+width: 60%;
 border-collapse: collapse;
 caption-side: top;
 font-size: medium;
-margin-left: 13%;
+margin-left: 6%;
 }
 th, td{
 border: 0px solid black;
@@ -143,7 +145,6 @@ font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 #show2 table {
-width: 55%;
 border-collapse: collapse;
 caption-side: top;
 font-size: medium;
@@ -179,4 +180,13 @@ background-color: white;
 }
 #uploads td{
 	font-size: medium;
+}
+footer {
+background-color: gray;
+color: #efe5d0;
+text-align: center;
+padding: 15px;
+margin: 0px 10px 10px 10px;
+font-size: 90%;
+clear: left;
 }

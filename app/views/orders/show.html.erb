@@ -87,7 +87,7 @@
 	</caption>
 <tr>
 <th> Deadline:</th>
-<th><%= @order.urgency %></th>
+<th><%= @order.created_at + @order.deadline.hours%></th>
 <th>Time remaining</th>
 <th></th>
 </tr>

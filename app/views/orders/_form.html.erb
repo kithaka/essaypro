@@ -35,8 +35,8 @@
  </div>
   <div class="tableRow">
   <span><%= f.label "Urgency" %></span>
-    <span><%= f.select :urgency, Order::Urgency, 
-                        :prompt=>"Select Paper Urgency"%></span>
+  <span><%= f.select(:deadline, { "8 Hours" => "8",  "12 Hours" => "12",  "24 Hours" => "24",  "48 Hours" => "48", 
+    "3 Days" => "72", "5 Days" => "120", "7 Days" => "168", "10 Days" => "240", "15 Days" => "360", "25 Days" => "600"}) %></span>
 </div>
 <div class="tableRow">
  <span><%= f.label "Number of References"%></span>
@@ -57,7 +57,7 @@
   </div>
 <div class="tableRow">
  <span><%= f.label :instructions %></span>
-      <span><%= f.text_area :instructions, :cols => "40", :rows => "10", :placeholder=>"Type Order Instructions" %></span>
+      <span><%= f.text_area :instructions, :cols => "50", :rows => "10", :placeholder=>"Type Order Instructions" %></span>
     </div>
   <div class="tableRow">
  <span><%= f.submit "Order Now", :class=>"btn btn-large btn-primary"%></span>

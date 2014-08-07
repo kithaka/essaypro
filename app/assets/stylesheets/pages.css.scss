@@ -3,7 +3,7 @@
 
 body {
 color: #85ADAD;
-background-color:#F5F5F4;
+background-color: #F5F5F4;
 font-family: Georgia, "Times New Roman", Times, serif;
 font-size: small;
 margin: 3%;
@@ -118,4 +118,16 @@ font-size: 150%;
 }
 #totalPrice{
 	font-size: 150%;
+}
+#notice{
+	color: red;
+}
+footer {
+background-color: gray;
+color: #efe5d0;
+text-align: center;
+padding: 15px;
+margin: 0px 10px 10px 10px;
+font-size: 90%;
+clear: left;
 }

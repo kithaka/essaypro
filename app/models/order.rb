@@ -1,11 +1,11 @@
 class Order < ActiveRecord::Base
-  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :urgency, :price, :spacing
+  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :deadline, :price, :spacing, :urgency
   belongs_to :customer
   has_many :payment_notifications
   has_many :uploadfiles
   has_many :messages
   has_many :states
-  validates :citation, :documenttype, :presence=>true
+  validates :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :deadline, :spacing, :presence=>true
   default_scope :order=>'orders.created_at DESC'
 Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Movies", "Music", "Paintings", "Theatre", "Biology", 
                   "Business", "Chemistry", "Communications and Media", "Advertising", "Communication Strategies", "Journalism", 
@@ -24,8 +24,8 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
  Academic_Level=["High School", "Undergraduate", "Master", "Ph.D."]
  Citation_Style=["APA", "MLA", "Turabian", "Chicago", "Harvard", "Oxford", "Vancouver", "CBE", "Other"]
  Preffered_Language=["English (U.S.)", "English (U.K.)"]
- Urgency=["8 hours", "12 hours", "24 hours", "48 hours", "3 days", "5 days", "7 days", "10 days", "15 days", "25 days"]
- Spacing=["single", "double"]
+ #Urgency=["8 hours", "12 hours", "24 hours", "48 hours", "3 days", "5 days", "7 days", "10 days", "15 days", "25 days"]
+ Spacing=["Single", "Double"]
  
 
 

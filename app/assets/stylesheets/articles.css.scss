@@ -1,77 +1,14 @@
-// Place all the styles related to the Customers controller here.
+// Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 
-/* styled form */
-#notice{
-	color: red;
-	font-size: medium;
-}
-#error_explanation {
-color: #f00;
-}
-#error_explanation ul {
-list-style: none;
-margin: 0 0 18px 0;
-}
-div.tableRow {
-display: table-row;
-clear: both;
-}
-div.tableRow span {
-display: table-cell;
-vertical-align: top;
-padding: 3px;
-}
-div.tableRow span:first-child {
-text-align: right;
-}
-p.heading {
-font-weight: bold;
-}
-
-label {
-	 text-shadow: 0px 1px 0px #f2f2f2;
-}
-
-
-.show{
-	font-size: medium;
-	padding-left: 15px;
-	background-color: #FFFFFF;
-	line-height: 2em;
-	border-top: thin solid #675c47;
-	border-bottom: thin solid #675c47;
-	border-left: thin solid #675c47;
-	border-radius: 15px;
-}
-.show table {
-border-collapse: collapse;
-caption-side: top;
-}
-
-caption {
-font-style: italic;
-padding-top: 10px;
-}
-
-
-.uploads {
-color: #000;
-
-margin-bottom: 2em;
-}
-.uploads form input{
-width: 10%;
-	border:1px thin solid;
-}
 
 body {
 color: #85ADAD;
 background-color:#F5F5F4;
 font-family: Georgia, "Times New Roman", Times, serif;
-font-size: small;
+font-size: medium;
 margin: 3%;
 padding-right: 3%;
 line-height: 1.8em;
@@ -116,7 +53,7 @@ color: black;
 
 #elixirs{
 width: 25%;
-float: left;
+float: right;
 text-align: center;
 line-height: 1;
 marigin: 5%;
@@ -146,17 +83,15 @@ font-size: small;
 	color: #4DB84D;
 	}
 }
-	.payments{
-background: url("payments.gif") repeat no-repeat;
+#payments{
+background: url("payments.gif") no-repeat;
 text-indent: -9999px; 
 white-space: nowrap;
-
-color: transparent;
 }
 #login{
 padding: 0;
 line-height: 1.3em;
-font-size: small;
+font-size: medium;
 text-align: left;
 margin: 2%;
 
@@ -166,29 +101,29 @@ width: 100%;
 border:1px thin solid;
 
 }
-#customer form input{
-margin-bottom: 5%;
-width: 80%;
-font-size: 135%;
-	border:1px line;
+#center{
+	background-color: white;
+	margin: 1%;
+	ul li {
+	color: brown;
+	}
 }
-#customer form select{
-font-size: 135%;
-margin-bottom: 5%;
-font-size: 130%;
-border:1px line;
+.pricing {
+line-height: 1.3em;
+margin: 3%;
 }
-
-#account{
-	background: white;
-	text-align: left;
-	border-radius: 6px;
+.pricing select{
+	font-size: 120%;
 }
-
-#account ul li{
-	text-align: left;
-	font-size: 140%;
-	
+.pricing legend{
+text-align: center;
+font-size: 150%;
+}
+#totalPrice{
+	font-size: 150%;
+}
+#notice{
+	color: red;
 }
 footer {
 background-color: gray;
@@ -197,5 +132,8 @@ text-align: center;
 padding: 15px;
 margin: 0px 10px 10px 10px;
 font-size: 90%;
-clear: left;
+clear: right;
+}
+#index{
+	width: 68%;
 }

@@ -1,6 +1,7 @@
 Essaypros::Application.routes.draw do
 
   resources :customers
+    resources :articles
   resources :payment_notifications
 
   resources :orders do
@@ -15,6 +16,7 @@ Essaypros::Application.routes.draw do
   match '/order_now', :to=>"orders#new"
   match '/pricing', :to=>'pages#pricing'
   match '/order_now', :to=>"orders#new"
+  resources :password_resets
   #match '/uploadfile', :to=>'uploads#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -9,8 +9,9 @@ def create
 			flash.now[:success]="Successfully logged in"
 			redirect_back_or customer
 		else
-			flash.now[:error]='Invalid email/password combination'
-			redirect_to root_path
+			redirect_to root_path, :notice =>"Invalid email/password combination"
+
+
 		end
 end
 def destroy

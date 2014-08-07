@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag    "pages", :media => "all" %>
+<h3>Reset Password</h3>
+
+<%= form_tag password_resets_path, :method => :post do %>
+<table>
+  <tr>
+
+    <td><%= text_field_tag :email, params[:email], :placeholder=>"Email"%></td>
+  </tr>
+  <tr>
+
+  <td><%= submit_tag "Reset Password" %></td>
+</tr>
+  </table>
+<% end %>
+
