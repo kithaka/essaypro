@@ -24,7 +24,7 @@ class Customer < ActiveRecord::Base
       self[column] = SecureRandom.urlsafe_base64
     end while Customer.exists?(column => self[column])
   end
-
+  
 
    private
    def create_remember_token
