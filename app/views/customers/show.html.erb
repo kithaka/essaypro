@@ -10,6 +10,7 @@
 		<li><%= link_to 'messages', '#'%></li></br>
 		<% if current_user.admin %>
 		<li><%= link_to "Orders", orders_url %></li></br>
+		<li><%= link_to "Customers/Users", customers_url%></li></br>
 		<% else %>
 		<li><%= link_to "My Orders", current_user%></li></br>
 		<% end %>

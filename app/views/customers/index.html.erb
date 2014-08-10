@@ -1,3 +1,4 @@
+<%= stylesheet_link_tag "pages", media: "all" %>
 <h1>Listing customers</h1>
 <%=will_paginate %>
 <table>
@@ -16,13 +17,21 @@
 <% @customers.each do |customer| %>
   <tr>
     <td><%= customer.firstname %></td>
+    <td></td>
     <td><%= customer.lastname %></td>
+    <td></td>
     <td><%= customer.email %></td>
+    <td></td>
     <td><%= customer.country %></td>
+    <td></td>
     <td><%= customer.contact %></td>
+    <td></td>
     <td><%= link_to 'Show', customer %></td>
+    <td></td>
     <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td></td>
     <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
   </tr>
 <% end %>
 </table>
