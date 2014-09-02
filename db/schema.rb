@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140807094148) do
+ActiveRecord::Schema.define(:version => 20140901133807) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20140807094148) do
     t.datetime "purchased_at"
     t.string   "spacing"
     t.integer  "deadline"
+    t.string   "marking"
   end
 
   create_table "orderstatuses", :force => true do |t|

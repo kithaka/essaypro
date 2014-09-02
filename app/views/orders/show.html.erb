@@ -11,21 +11,13 @@
 			<%=@order.messages.count(:sender) %></span></li></br>
 		<% if current_user.admin %>
 		<li><%= link_to "Orders", orders_url%></li></br>
+		<li class="badge badge-default"><%= link_to "Mark as Complete", order_path(@order, :order=>{:marking=>"complete"}), :method=>:put, :confirmation=>"Are you Sure"%></li></br>
 		<% else %>
-		<li><%= link_to "My Orders", current_user%></li></br>
+		<li class="btn btn-large btn btn-default"><%= link_to "My Orders", current_user%></li></br>
+		<li class="btn btn-large btn btn-default"><%= link_to "Request Revision", order_path(@order, :order=>{:marking=>"revision"}), :method=>:put, :confirmation=>"Are you Sure"%></li></br>
+
+		<li class="btn btn-large btn btn-default"><%= link_to "Dispute", order_path(@order, :order=>{:marking=>"dispute"}), :method=>:put, :confirmation=>"Are you Sure"%></li></br>
 		<% end %>
-		
-		<li><%= link_to 'processing_orders', '#'%></li></br>
-		<li><%= link_to 'complete_orders', '#'%>|
-			<span class="badge badge-important">
-			<%=@order.states.count(:complete) - @order.states.count(:revision)%> 
-		</span>
-	</li></br>
-		<li><%= link_to 'revisions', '#'%>|
-			<% if @order.states.count(:complete)>0 && (@order.states.count(:complete) - @order.states.count(:revision)==0)%>
-			<span class="badge badge-important">1</span>
-			<% end %>
-		</li></br>
 			
 
 		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
@@ -61,29 +53,9 @@
 <p id="notice"> <%=notice %></p>
 <table>
   <caption>
-<b>
-<% if @order.states.count(:complete) - @order.states.count(:revision) >0%>
-            <span class="badge badge-important">Complete</span>
-<% end %>
-</b>
-<b>
-<% if @order.states.count(:complete)>0 %>
-            <% if @order.states.count(:complete) - @order.states.count(:revision)==0 %>
-            <span class="badge badge-important">Revision</span>
-            <% end %>
-    <% end %>
-</b>
     <b id="topic"><%= @order.topic %></b>
     <b><%=link_to "Send A Message", new_order_message_path(@order, :format=>:js),
 	:remote=>true, :id=>'new_message_link', :class=>"btn btn-small btn-primary"  %></b>
-	<% if current_user.admin %>
-	<b><%=link_to "Mark as Complete", new_order_state_path(@order, :format=>:js),
-	:remote=>true, :id=>'request_link', :class=>"btn btn-large btn-primary"  %></b>
-	<% else %>
-	<b><%=link_to "Request Revision", new_order_state_path(@order, :format=>:js),
-	:remote=>true, :id=>'request_link', :class=>"btn btn-large btn-primary"  %></b>
-	<% end %>
-
 	</caption>
 <tr>
 <th> Deadline:</th>

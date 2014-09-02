@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
-  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :deadline, :price, :spacing, :urgency
+  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :deadline, :price, :spacing, :urgency, :marking
+
   belongs_to :customer
   has_many :payment_notifications
   has_many :uploadfiles
@@ -35,8 +36,8 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
     :business=>"ptztom@gmail.com",
     :cmd=>"_cart", #had used a cart without underscore
     :upload=>1,
-    :return =>return_url,
-    :invoice=>id,
+    :return => "http://calm-meadow-7091.herokuapp.com/orders",
+    :invoice=>@order_id,
     :notify_url=>notify_url
   }
   values.merge!({
