@@ -91,6 +91,8 @@
 	<td><%= @order.instructions %> </td>
 <td><%if @order.payments.empty? %>
 <td ><%=link_to image_tag("Paypal.png", :alt=>"Buy With PayPal"), @order.paypal_url(orders_url, notification_orders_url)%> </td>
+<%else%>
+<b class="btn btn-large btn btn-info"> Processing </b>
 <% end %>
 </tr>
 </table>
