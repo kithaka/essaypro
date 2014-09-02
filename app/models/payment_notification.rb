@@ -8,8 +8,8 @@ class PaymentNotification < ActiveRecord::Base
   def mark_order_as_purchased
   	if status=="Completed"
 
-       #@order = Order.find(params[:order_id])
-  		@order.update_attribute(purchased_at: Time.now)
+      @order = Order.find(params[:order_id])
+  		@order.update_attributes(:purchased_at=>Time.now)
   	end
   end
 end
