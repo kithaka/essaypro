@@ -1,6 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :deadline, :price, :spacing, :urgency, :marking
-
+  attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :deadline, :price, :spacing, :urgency, :marking, :purchased_at
   belongs_to :customer
   has_many :payment_notifications
   has_many :uploadfiles
