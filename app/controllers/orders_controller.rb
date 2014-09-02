@@ -93,10 +93,9 @@ class OrdersController < ApplicationController
       #paypal sends an IPN even when the transaction is void
       if params[:payment_status]=="Completed"
         @order=Order.find(params[:item_number1].to_i) rescue nil
-        @order.payments.build(:quantity=>1, :amount=>params[:mic_gross_1], :status=>params[:payment_status]).save unless @order.nil?)
-end
-end
-
-render :nothing=>true
-end
+        @order.payments.build(:quantity=>1, :amount=>params[:mic_gross_1], :status=>params[:payment_status]).save unless @order.nil?
+      end
+    end
+    render :nothing=>true
+  end
 end
