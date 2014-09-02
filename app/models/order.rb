@@ -36,7 +36,7 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
     :cmd=>"_cart", #had used a cart without underscore
     :upload=>1,
     :return => "http://calm-meadow-7091.herokuapp.com/orders",
-    :invoice=>@order_id,
+    :invoice=>id,
     :notify_url=>notify_url
   }
   values.merge!({
