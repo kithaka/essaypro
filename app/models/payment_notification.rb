@@ -7,7 +7,7 @@ class PaymentNotification < ActiveRecord::Base
   private
   def mark_order_as_purchased
   	if status=="Completed"
-  		order.update_attribute(:purchased_at, Time.now)
+  		order.update_attributes(:purchased_at, Time.now)
   	end
   end
 end
