@@ -90,7 +90,7 @@
 <tr>
 	<td><%= @order.instructions %> </td>
 <td><% unless @order.purchased_at %>
-<td ><%=link_to image_tag("Paypal.png", :alt=>"Buy With PayPal"), @order.paypal_url(order_url, payment_notifications_url)%> </td>
+<td ><%=link_to image_tag("Paypal.png", :alt=>"Buy With PayPal"), @order.paypal_url(orders_url, notification products url)%> </td>
 <% end %>
 </tr>
 </table>

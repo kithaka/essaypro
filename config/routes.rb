@@ -1,12 +1,14 @@
 Essaypros::Application.routes.draw do
 
   resources :customers
-    resources :articles
-  resources :payment_notifications
+  resources :articles
 
   resources :orders do
     resources :uploadfiles
     resources :messages
+    collection do
+      post 'notification'
+    end
   end
   resources :sessions, :only=>[:new, :create, :destroy]
   match '/signup', :to=>"customers#new"

@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
   attr_accessible :citation, :documenttype, :instructions, :language, :level, :pages, :references, :subject, :topic, :deadline, :price, :spacing, :urgency, :marking, :purchased_at
   belongs_to :customer
-  has_many :payment_notifications
+  has_many :payments
   has_many :uploadfiles
   has_many :messages
   has_many :states
@@ -42,8 +42,8 @@ Subject_Type = ["Art", "Architecture", "Dance", "Design Analysis", "Drama", "Mov
   values.merge!({
     #amount is in cents
     "amount_1"=>price,
-    "item_name_1"=>"custom_paper",
-    "item_number_1"=>1,
+    "item_name_1"=>topic,
+    "item_number_1"=>id,
     "quantity_1"=>1
 
     })
