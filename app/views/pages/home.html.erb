@@ -1,8 +1,6 @@
 <%= stylesheet_link_tag "pages", media: "all" %>
 <div id="elixirs">
-	<div>
-<span class="btn btn-large btn btn-default"><h2><%=link_to "Buy Custom Essay", order_now_path %></span></h2>
-</div>
+	
 <% unless signed_in?%>
 <div id="login">
 	<%= render :file => 'sessions/new' %>

@@ -4,16 +4,17 @@
 <table>
 	<caption>
    <b>
-<% if order.states.count(:complete) - order.states.count(:revision) >0%>
-<span class="badge badge-important">Complete</span>
+<% if order.marking=="complete"%>
+            <span class="btn btn-large btn btn-warning">Complete</span>
 <% end %>
 </b>
 <b>
-<% if order.states.count(:complete)>0 %>
-<% if order.states.count(:complete) - order.states.count(:revision)==0 %>
-<span class="badge badge-important">Revision</span>
-<% end %>
-<% end %>
+<% if order.marking=="revision" %>
+            <span class="btn btn-large btn btn-warning">Revision</span>
+    <% end %>
+   <% if order.marking=="dispute" %>
+            <span class="btn btn-large btn btn-warning">Dispute</span>
+    <% end %> 
 </b>
     <b><%= order.topic %>:</b><%= link_to 'Order Details', order, :class=>"btn btn-large btn-primary" %></b>
 </b><%= link_to 'Upload files', order, :class=>"btn btn-large btn-primary" %></b>

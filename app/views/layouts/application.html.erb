@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Essaypros</title>
-  <%= stylesheet_link_tag "menu", media: "all" %>
+  <%= stylesheet_link_tag "sessions", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -14,22 +14,22 @@
 </div>
 
 </header>
-<div id="cssmenu">
+<div>
 <nav>
 <ul>
 	<% if signed_in?%>
-    <li><%=link_to "Account", current_user %></li>
+    <li class="btn btn-large btn btn-default"><em><%=link_to "Account", current_user %></em></li>
     <%else %>
     <li></li>
     <li></li>
-    <li class="active"><%=link_to "Home", root_path %></li>
+    <li class="btn btn-large btn btn-default"><em><%=link_to "Home", root_path %></em></li>
     <% end %>
-    <li><%=link_to "Order Now", order_now_path %></li>
-    <li><%=link_to "Pricing", pricing_path %></li>
+    <li class="btn btn-large btn btn-warning"><h4><%=link_to "Order Now", order_now_path %><h4></li>
+    <li class="btn btn-large btn btn-default"><em><%=link_to "Pricing", pricing_path %></em></li>
     
-    <li><a href="op.html">Sample Papers</a></li>
-    <li><%= link_to "Blog",  articles_path %></li>
-    <li class='last'><a href="st.html">Contact Us</a></li>
+    <li class="btn btn-large btn btn-default"><em><a href="op.html">Sample Papers</a></em></li>
+    <li class="btn btn-large btn btn-default"><em><%= link_to "Blog",  articles_path %></em></li>
+    <li class="btn btn-large btn btn-default"><em><a href="st.html">About Us</a></em></li>
 </ul>
 </nav>
 </div>
