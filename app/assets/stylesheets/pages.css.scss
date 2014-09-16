@@ -1,27 +1,30 @@
 @import "bootstrap";
-
+html{
+	background-color: #A3DADA;
+}
 
 body {
-color: #85ADAD;
-background-color: #F5F5F4;
-font-family: Georgia, "Times New Roman", Times, serif;
+color: #5B7A7A;
+background-color: white;
+font-family: Verdana, "Times New Roman", Times, serif;
 font-size: small;
 margin: 3%;
+width: 87%;
 padding-right: 3%;
 line-height: 1.8em;
+border: 2px thin solid;
+border-radius: 15px;
 }
 
 .top {
 margin: 2%;
-height: 300%;
-background-color: black;
+font-size: 300%;
 }
 #logo{
-background: url("banner.png") no-repeat;
-background-size: 45%;
 border: 2px thin solid;	
 position: relative;
 left: 10%;
+color: brown;
 }
 
 nav {
@@ -55,11 +58,8 @@ width: 25%;
 float: left;
 text-align: center;
 line-height: 1;
-marigin: 5%;
-padding-right: 20px;
-padding-bottom: 20px;
-
-
+margin: 0.5%;
+padding: 2%;
 }
 #elixirs h2 {
 color: black;
@@ -90,7 +90,7 @@ white-space: nowrap;
 #login{
 padding: 0;
 line-height: 1.3em;
-font-size: medium;
+font-size: small;
 text-align: left;
 margin: 2%;
 
@@ -125,12 +125,11 @@ font-size: 150%;
 	color: red;
 }
 footer {
-background-color: gray;
-color: #efe5d0;
+color: brown;
 text-align: center;
 padding: 15px;
-margin: 0px 10px 10px 10px;
 font-size: 90%;
 clear: left;
 margin-top: 5%;
+padding-left: 15%;
 }

@@ -1,43 +1,47 @@
-<div id="show">
-<%=will_paginate @orders%>
 
-<table>
-	<caption>
-   <b>
-<% if order.marking=="complete"%>
-            <span class="btn btn-large btn btn-warning">Complete</span>
-<% end %>
-</b>
-<b>
-<% if order.marking=="revision" %>
-            <span class="btn btn-large btn btn-warning">Revision</span>
-    <% end %>
-   <% if order.marking=="dispute" %>
-            <span class="btn btn-large btn btn-warning">Dispute</span>
-    <% end %> 
-</b>
-    <b><%= order.topic %>:</b><%= link_to 'Order Details', order, :class=>"btn btn-large btn-primary" %></b>
-</b><%= link_to 'Upload files', order, :class=>"btn btn-large btn-primary" %></b>
-<span><%= link_to 'messages', order%>|<span class="badge badge-important"> <%=order.messages.count(:sender) %></span></span>
 
-</caption>
-<tr>
-<th> Deadline:</th>
-<th><%= order.urgency %></th>
-<th>Time remaining</th>
-</tr>
-<tr>
-<td>PaperID:</td>
-<td>#0412<%=order.id%>90</td>
-<td>No of Pages</td>
-<td><%=order.pages%></td>
-</tr>
-<tr>
-<td>Order type:</td>
-<td><%=order.documenttype%></td>
-<td>Sources</td>
-<td><%=order.references%></td>
-</tr>
-<p></p>
-</table>
-</div>
+    <table class="table table-striped">
+
+        <thead>
+
+            <tr>
+
+                <th>Project Description</th>
+
+                <th>Order ID</th>
+
+                <th>Time remaining</th>
+
+                <th>Order Status</th>
+                <th>Messages</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td rowspan="3"><%= link_to "#{order.instructions}", order%></td>
+
+                <td>#<%=order.id%></td>
+
+                <td><%=order.urgency%></td>
+                <td> <% if order.marking=="complete"%>
+                    <span class="btn btn-small btn btn-default">Complete</span>
+                    <% end %>
+                    <% if order.marking=="revision" %>
+                    <span class="btn btn-large btn btn-default">Revision</span>
+                    <% end %>
+                    <% if order.marking=="dispute" %>
+                    <span class="btn btn-large btn btn-default">Dispute</span>
+                    <% end %>
+                </td>
+                <td><span class="badge badge-default"><%= link_to "#{order.messages.count(:recipient)}", order %>
+        </span></td>
+            </tr>
+
+        </tbody>
+
+    </table>

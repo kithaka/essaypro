@@ -9,36 +9,70 @@
 <body>
 	<header class="top">
 		<div id="logo">
-<p>Theacademicwriters.com </p>
-  <p>custom writing agency</p>
+<h1>AcademicWriters.com </h1>
 </div>
 
 </header>
-<div>
 <nav>
-<ul>
+<ul id="navs">
 	<% if signed_in?%>
-    <li class="btn btn-large btn btn-default"><em><%=link_to "Account", current_user %></em></li>
-    <%else %>
-    <li></li>
-    <li></li>
-    <li class="btn btn-large btn btn-default"><em><%=link_to "Home", root_path %></em></li>
-    <% end %>
-    <li class="btn btn-large btn btn-warning"><h4><%=link_to "Order Now", order_now_path %><h4></li>
-    <li class="btn btn-large btn btn-default"><em><%=link_to "Pricing", pricing_path %></em></li>
-    
-    <li class="btn btn-large btn btn-default"><em><a href="op.html">Sample Papers</a></em></li>
+    <li class="btn btn-large btn btn-default"><em><%= link_to "Profile", edit_customer_path(current_user)%></em></li>
+    <% if current_user.admin %>
+    <li class="btn btn-large btn btn-default"><em><%= link_to "Orders", orders_url %></em></li>
+    <li class="btn btn-large btn btn-default"><em><%= link_to "Users", customers_url%></em></li>
     <li class="btn btn-large btn btn-default"><em><%= link_to "Blog",  articles_path %></em></li>
-    <li class="btn btn-large btn btn-default"><em><a href="st.html">About Us</a></em></li>
+    <% else %>
+    <li class="btn btn-large btn btn-default"><em><%= link_to "My Orders", current_user%></em></li>
+    <% end %>
+    <li class="btn btn-large btn btn-default"><em><%= link_to 'processing_orders', '#'%></em></li>
+    <li class="btn btn-large btn btn-default"><%= link_to 'complete_orders', '#'%>|
+      <% @complete=Order.where(:marking=>"complete") %>
+        <span class="badge badge-important">
+        <%= @complete.count %>
+        </span>
+    </li>
+    
+    <li class="btn btn-large btn btn-default"><%= link_to 'revisions', '#'%>|
+      <% @revision=Order.where(:marking=>"revision") %>
+        <span class="badge badge-important">
+        <%= @revision.count %>
+        </span>
+    </li>
+    <li class="btn btn-large btn btn-default"><%= link_to 'disputed', '#'%>|
+      <% @disputed=Order.where(:marking=>"dispute") %>
+        <span class="badge badge-important">
+        <%= @disputed.count %>
+        </span>
+
+    </li>
+    <li class="btn btn-large btn btn-default"><em><%= link_to "Sign out", signout_path, :method=> "delete" %></em></li>
+    <%else%>
+              <li class="btn btn-large btn btn-default"><em><%=link_to "Home", root_path %></em></li>
+              <li class="btn btn-large btn btn-warning"><h4><%=link_to "Order Now", order_now_path %><h4></li>
+              <li class="btn btn-large btn btn-default"><em><%=link_to "Pricing", pricing_path %></em></li>
+              <li class="btn btn-large btn btn-default"><em><%= link_to "Blog",  articles_path %></em></li>
+              <li class="btn btn-large btn btn-default"><em><a href="st.html">About Us</a></em></li>
+              <% end %>
 </ul>
 </nav>
-</div>
   <%= yield %>
   <footer>
-&copy; Theacademicwriters
+    <div class="posts">
+<%recent_posts %>
+<ul>
+<li>
+  <%@articles.each do |article| %>
+  <em><%= link_to  "#{article.title}", article %></em>|
+  <% end %>
+</li>
+</ul>
+</div>
+<p></p>
+&copy; Theacademicwriters <%=(Time.now.year) %>
 <br>
 All trademarks and registered trademarks appearing on
 this site are the property of their respective owners.
 </footer>
 </body>
+
 </html>

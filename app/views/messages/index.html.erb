@@ -3,18 +3,14 @@
 <div class="messages">
 <b class="btn btn-large btn btn-default"><%= link_to "Close Messages", @order%></b>
 	<%@messages.each do |message| %>
-<table>
+<table class="table">
 	<% if message.sender %>
-	<tr>
-		<td>Replies </td>
-		<td >[<%=message.subject %>]:</td>
-		<td ><%=message.body%></td>
+	<tr class="active">
+		<td>Support &nbsp; &nbsp;|<%=message.body%></td>
 	</tr>
 	<%else %>
 	<tr>
-		<td>Your messages</td>
-		<td >[<%=message.subject %>]:</td>
-		<td ><%=message.body%></td>
+		<td>You  &nbsp; &nbsp; |<%=message.body%></td>
 
 	</tr>
 	<% end %>

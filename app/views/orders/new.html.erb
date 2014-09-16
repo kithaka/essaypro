@@ -6,17 +6,6 @@
 	<%= render :file => 'sessions/new' %>
 </div>
   <% end %>
-  <p></p>
-  <div id="account">
-  <% if signed_in? %>
-	<ul>
-		<h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
-		<li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
-		<li><%= link_to "My Orders", current_user%></li></br>
-		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
-	</ul>
-	<% end %>
-</div>
 <div id="features">
 	<h4><span class="btn btn-large btn btn-info">Topics Covered</span></h4>
 		<ul>
@@ -64,5 +53,7 @@
 <% if notice %>
 <p id="notice"><%=notice%></p>
 <%end%>
+<div id="customer2">
 <%= render 'form' %>
+</div>
 </div>

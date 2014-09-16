@@ -1,71 +1,9 @@
-<%=stylesheet_link_tag  "orders", media: "all" %>
+<%=stylesheet_link_tag  "customers", media: "all" %>
 <p id="notice"><%= notice %></p>
-    
-<div id="elixirs">
-	<div id="account">
-	<ul>
-		<h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
-		<li>Welcome: <%=current_user.firstname %></li></br>
-		<li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
-		<% if current_user.admin %>
-		<li><%= link_to "Orders", orders_url %></li></br>
-		<li><%= link_to "Customers/Users", customers_url%></li></br>
-		<% else %>
-		<li><%= link_to "My Orders", current_user%></li></br>
-		<% end %>
-		<li><%= link_to 'processing_orders', '#'%></li></br> 
-		<li><%= link_to 'complete_orders', '#'%>|
-			<% @complete=Order.where(:marking=>"complete") %>
-        <span class="badge badge-important">
-        <%= @complete.count %>
-        </span>
-		</li></br>
-		
-		<li><%= link_to 'revisions', '#'%>|
-			<% @revision=Order.where(:marking=>"revision") %>
-        <span class="badge badge-important">
-        <%= @revision.count %>
-        </span>
-		</li></br>
-		<li><%= link_to 'disputed', '#'%>|
-			<% @disputed=Order.where(:marking=>"dispute") %>
-        <span class="badge badge-important">
-        <%= @disputed.count %>
-        </span>
 
-		</li></br>
-		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
-	</ul>
-</div>
-	
-<p></p>
-<div id="features">
-<h4><span class="btn btn-large btn btn-info">Service Features</span></h4>
-		<ul>
-
-   <li>FREE amendments</li>
-    <li>FREE bibliography page</li>
-    <li>FREE title page</li>
-    <li>FREE Plagiarism report</li>
-    <li>FREE Formatting</li>
-    <li>100% original papers</li>
-    <li>275 words per page</li>
-    <li>Any citation style</li>
-    <li>Guaranteed Privacy</li>
-    <li> 24/7 customer support</li>
-    <li>...and Others!</li>
-</ul>
-</div>
-<div id="payments">
-	<h3>PayPal Verified</h3>
-	<p>You dont need a credit card</p>
-	<p>You can Pay for our services via PayPal</p>
-	<p>Your transaction will process within minutes</p>
-</div>
-</div>
 <%if current_user.orders.any? %>
-    <!--<h3>Orders (<%#=@customer.orders.count %>)</h3>-->
-      <%=render @orders %>
-      <% end %>
+    <%=render @orders %>
+    <% end %>
+
 
       

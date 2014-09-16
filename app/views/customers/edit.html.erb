@@ -1,21 +1,6 @@
 
 <%= stylesheet_link_tag "customers", media: "all" %>
 	<div id="elixirs">
-	<div id="account">
-	<% if signed_in? %>
-	<ul>
-		<h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
-		<li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
-		<li><%= link_to 'messages', '#'%></li></br>
-		<li><%= link_to "My Orders", current_user%></li></br>
-		<li><%= link_to 'processing_orders', '#'%></li></br>
-		<li><%= link_to 'complete_orders', '#'%></li></br>
-		<li><%= link_to 'revisions', '#'%></li></br>
-		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
-	</ul>
-	<% end %>
-</div>
-  <p></p>
 <div id="features">
 	<h4><span class="btn btn-large btn btn-info">Topics Covered</span></h4>
 		<ul>

@@ -2,28 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
+html{
+	background-color: #A3DADA;
+}
+
 body {
-color: #85ADAD;
-background-color:#F5F5F4;
-font-family: Georgia, "Times New Roman", Times, serif;
+color: #5B7A7A;
+background-color: white;
+font-family: Verdana, "Times New Roman", Times, serif;
 font-size: small;
 margin: 3%;
+width: 90%;
 padding-right: 3%;
 line-height: 1.8em;
+border: 2px thin solid;
+border-radius: 15px;
 }
 
 .top {
-margin: 1%;
-height: 300%;
-background-color: black;
+margin: 2%;
+font-size: 300%;
 }
 #logo{
-background: url("banner.png") no-repeat;
-background-size: 45%;
 border: 2px thin solid;	
 position: relative;
 left: 10%;
+color: brown;
 }
+
 #notice{
 	color: red;
 }
@@ -53,25 +59,6 @@ nav ul a:hover {
 color: black;
 }
 
-#elixirs{
-width: 25%;
-float: right;
-text-align: center;
-line-height: 1;
-marigin: 5%;
-padding-right: 10px;
-padding-bottom: 20px;
-
-
-}
-#elixirs h2 {
-color: black;
-}
-#elixirs h3 {
-color: #d12c47;
-}
-
-
 #features{
 padding-left: 1em;
 padding-bottom: 1em;
@@ -98,41 +85,6 @@ font-size: small;
 	
 }
 
-div.tableRow {
-display: table-row;
-clear: both;
-}
-div.tableRow span {
-display: table-cell;
-vertical-align: top;
-padding: 3px;
-}
-div.tableRow span:first-child {
-text-align: right;
-}
-p.heading {
-font-weight: bold;
-}
-
-#show table {
-width: 60%;
-border-collapse: collapse;
-caption-side: top;
-font-size: medium;
-margin-left: 6%;
-}
-th, td{
-border: 0px solid black;
-font-size: large;
-padding: 2%;
-}
- th {
-background-color: #FFD6F5;
-}
-tr:nth-child(odd) {
-background-color: #DAF3FF;
-}
-
 #notice{
 font-size: large;
 color: green;
@@ -145,50 +97,52 @@ line-height: 1em;
 font-size: small;
 font-family: Georgia, "Times New Roman", Times, serif;
 }
-
-#show2 table {
-border-collapse: collapse;
-caption-side: top;
-font-size: medium;
-margin-left: 6%;
-}
 #payments{
 background: url("payments.gif") no-repeat;
 text-indent: -9999px; 
 white-space: nowrap;
 }
 
-#message{
-
-th, td{
-border: 0px solid black;
-}
- th {
-background-color: transparent;
-}
-tr:nth-child(odd) {
-background-color: transparent;
-}
-}
-.messages td{
-font-size: 100%;
-background-color: white;
-}
-.messages tr{
-	border-bottom: 3px solid black;
-}
-#uploads tr{
-	background-color: transparent;
-}
-#uploads td{
-	font-size: medium;
+#uploads{
+padding-left: 5%;
 }
 footer {
-background-color: gray;
-color: #efe5d0;
+color: brown;
 text-align: center;
 padding: 15px;
-margin: 0px 10px 10px 10px;
 font-size: 90%;
-clear: both;
+clear: left;
+margin-top: 5%;
+padding-left: 17%;
+}
+#message{
+	padding-left: 7%;
+}
+#elixirs{
+width: 25%;
+float: right;
+text-align: center;
+line-height: 1;
+marigin: 5%;
+padding-right: 20px;
+padding-bottom: 20px;
+}
+#elixirs h2 {
+color: black;
+}
+#elixirs h3 {
+color: #d12c47;
+}
+#features{
+padding-left: 1em;
+padding-bottom: 1em;
+border:2px dotted white;
+border-radius:5px;
+text-align:left;
+line-height: 1.3em;
+font-size: small;
+ul li{
+list-style: circles;
+color: #4DB84D;
+}
 }

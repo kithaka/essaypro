@@ -1,110 +1,106 @@
 <%= stylesheet_link_tag  "orders", media: "all" %>
-<div id="elixirs">
-	<div id="account">
-	<ul>
-		<h4 class="btn btn-large btn btn-primary">Account/Orders</h4>
-		<li>Welcome: <%=current_user.firstname %></li></br>
-		<li><%= link_to "Profile", edit_customer_path(current_user)%></li></br>
 
-		<li><%=link_to "Messages", order_messages_path(@order, :format=>:js),
-	:remote=>true, :id=>'read_message_link' %>|<span class="badge badge-important">
-			<%=@order.messages.count(:sender) %></span></li></br>
-		<% if current_user.admin %>
-		<li><%= link_to "Orders", orders_url%></li></br>
-		<li class="badge badge-default"><%= link_to "Mark as Complete", order_path(@order, :order=>{:marking=>"complete"}), :method=>:put, :confirmation=>"Are you Sure"%></li></br>
-		<% else %>
-		<li class="btn btn-large btn btn-default"><%= link_to "My Orders", current_user%></li></br>
-		<li class="btn btn-large btn btn-default"><%= link_to "Request Revision", order_path(@order, :order=>{:marking=>"revision"}), :method=>:put, :confirmation=>"Are you Sure"%></li></br>
-
-		<li class="btn btn-large btn btn-default"><%= link_to "Dispute", order_path(@order, :order=>{:marking=>"dispute"}), :method=>:put, :confirmation=>"Are you Sure"%></li></br>
-		<% end %>
-			
-
-		<li><%= link_to "Sign out", signout_path, :method=> "delete" %></li></br>
-	</ul>
-</div>
-
-<p></p>
-<div id="features">
-<h4><span class="btn btn-large btn btn-info">Service Features</span></h4>
-		<ul>
-
-   <li>FREE amendments</li>
-    <li>FREE bibliography page</li>
-    <li>FREE title page</li>
-    <li>FREE Plagiarism report</li>
-    <li>FREE Formatting</li>
-    <li>100% original papers</li>
-    <li>275 words per page</li>
-    <li>Any citation style</li>
-    <li>Guaranteed Privacy</li>
-    <li> 24/7 customer support</li>
-    <li>...and Others!</li>
-</ul>
-</div>
-<div id="payments">
-	<h3>PayPal Verified</h3>
-	<p>You dont need a credit card</p>
-	<p>You can Pay for our services via PayPal</p>
-	<p>Your transaction will process within minutes</p>
-</div>
-</div>
 <div id="show2">
 <p id="notice"> <%=notice %></p>
-<table>
-  <caption>
-    <b id="topic"><%= @order.topic %></b>
-    <b><%=link_to "Send A Message", new_order_message_path(@order, :format=>:js),
-	:remote=>true, :id=>'new_message_link', :class=>"btn btn-small btn-primary"  %></b>
-	</caption>
-<tr>
-<th> Deadline:</th>
-<th><%= @order.created_at + @order.deadline.hours%></th>
-<th>Time remaining</th>
-<th></th>
-</tr>
-<tr>
-<td>PaperID:</td>
-<td>#0412<%=@order.id%>90</td>
-<td>Pages</td>
-<td><%=@order.pages%></td>
-</tr>
-<tr>
-<td>Order type:</td>
-<td><%=@order.documenttype%></td>
-<td>Sources</td>
-<td><%=@order.references%></td>
-</tr>
-<tr>
-<td>Style:</td>
-<td><%= @order.citation %></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Language:</td>
-<td><%= @order.language %></td>
-<td>Total Cost:</td>
-<td>$<%=@total_price%></td>
-</tr>
-<tr>
-	<td><%= @order.instructions %> </td>
-<td><%if @order.payments.empty? %>
-<td ><%=link_to image_tag("Paypal.png", :alt=>"Buy With PayPal"), @order.paypal_url(orders_url, notification_orders_url)%> </td>
-<%else%>
-<b class="btn btn-large btn btn-info"> Processing </b>
-<% end %>
-</tr>
-</table>
-</div>
-<div id="uploads">
-<%= render :file => 'uploadfiles/new' %>
-<% if @order.uploadfiles%>
-<td> <% @order.uploadfiles.each do |uploadfile| %>
-	<span><%= uploadfile.name %></span>:
-	<span><%= link_to "Download file", uploadfile.attachment_url %></span></br>
-    <% end %>
-</td>
-<% end %>
-</div>
 
+
+    <table class="table table-striped">
+
+        <thead>
+
+            <tr>
+            	<th>Paper ID</th>
+
+                <th>Order Topic</th>
+
+                <th>Deadline</th>
+
+                <th>Order Type</th>
+
+                <th>Style</th>
+
+                <th>Language</th>
+
+                <th>No of Pages</th>
+
+                <th>No of Sources</th>
+
+                <th>Instructions</th>
+
+                <th>Total Cost</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+            	<td><%=@order.id%></td>
+
+                <td><%= @order.topic %></td>
+
+                <td><%= @order.created_at + @order.deadline.hours%></td>
+
+                <td><%=@order.documenttype%></td>
+
+                <td><%= @order.citation %></td>
+
+                <td><%= @order.language %></td>
+
+                <td><%=@order.pages%></td>
+
+                <td><%=@order.references%></td>
+
+                <td><%= @order.instructions %> </td>
+
+                <td>$<%=@total_price%></td>
+            </tr>
+        </tbody>
+
+        </table>
+        <table class="table">
+        	<tbody>
+            <tr>
+            	<td>
+            		<%if @order.payments.empty? %>
+            		<%=link_to image_tag("Paypal.png", :alt=>"Buy With PayPal"), @order.paypal_url(orders_url, notification_orders_url)%>
+            		<%else%>
+            		<b class="btn btn-large btn btn-info"> Processing <b>
+            		<% end %>
+            	</td>
+            	<td id="uploads">
+
+            		<%= render :file => 'uploadfiles/new' %>
+            		<% if @order.uploadfiles%>
+            		<% @order.uploadfiles.each do |uploadfile| %>
+            			<span><%= uploadfile.name %></span>:
+            			<span><%= link_to "Download file", uploadfile.attachment_url %></span></br>
+            			<% end %>
+            		<% end %>
+            	</td>
+            	<td>
+            		<% if current_user.admin %>
+            		<li class="btn btn-small btn-default"><%= link_to "Mark as Complete", order_path(@order, :order=>{:marking=>"complete"}), :method=>:put, :confirmation=>"Are you Sure"%></li>
+            		<% end%>
+            	</td>
+            </tr>
+            <tr class="active">
+            	<td id="contactus">
+            		<em> Your order will be done as soon as you pay </em>
+            	</td>
+            	<td id="message4">
+            		<%=link_to "Contact Support", new_order_message_path(@order, :format=>:js),
+            	:remote=>true, :id=>'new_message_link', :class=>"btn btn-small btn-danger"  %>
+            </td>
+            <td>
+            	<%=link_to "Messages", order_messages_path(@order, :format=>:js),
+            	:remote=>true, :id=>'read_message_link' %>|<span class="badge badge-important">
+            	<%=@order.messages.count(:sender) %></span>
+            	<p id="features"> </p>
+            </td>
+
+        </tr>
+    </tbody>
+
+    </table>

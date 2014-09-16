@@ -2,29 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
-
+html{
+	background-color: #A3DADA;
+}
 
 body {
-color: #85ADAD;
-background-color:#F5F5F4;
-font-family: Georgia, "Times New Roman", Times, serif;
-font-size: medium;
+color: #5B7A7A;
+background-color: white;
+font-family: Verdana, "Times New Roman", Times, serif;
+font-size: small;
 margin: 3%;
+width: 87%;
 padding-right: 3%;
 line-height: 1.8em;
+border: 2px thin solid;
+border-radius: 15px;
 }
 
 .top {
 margin: 2%;
-height: 300%;
-background-color: black;
+font-size: 300%;
 }
 #logo{
-background: url("banner.png") no-repeat;
-background-size: 45%;
 border: 2px thin solid;	
 position: relative;
 left: 10%;
+color: brown;
 }
 
 nav {
@@ -128,14 +131,15 @@ font-size: 150%;
 	color: red;
 }
 footer {
-background-color: gray;
-color: #efe5d0;
+color: brown;
 text-align: center;
 padding: 15px;
-margin: 0px 10px 10px 10px;
 font-size: 90%;
-clear: right;
+clear: left;
+margin-top: 5%;
+padding-left: 17%;
 }
+
 #index{
 	width: 68%;
 	color: gray;
@@ -146,4 +150,14 @@ clear: right;
 	border-radius:5px;
 	padding: 10px;
 	background-color: white;
+#blog ul {
+margin: 0px;
+list-style-type: none;
+padding: 5px 0px 5px 0px;
+}
+#blog ul li {
+display: inline;
+padding: 5px 10px 5px 10px;
+}
+
 }
