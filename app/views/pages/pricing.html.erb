@@ -1,6 +1,8 @@
 <%= stylesheet_link_tag "pages", media: "all" %>
-<div id="elixirs">
-<% unless signed_in?%>
+<table>
+    <tr>
+        <td id="elixirs">
+            <% unless signed_in?%>
 <div id="login">
     <%= render :file => 'sessions/new' %>
 </div>
@@ -51,7 +53,8 @@
     <p>You can Pay for our services via PayPal</p>
     <p>Your transaction will process within minutes</p>
 </div>
-</div>
+</td>
+<td id="main">
 <h4><em>Our Prices!</em></h4>
 Theacademicwriters.com is a trustworthy custom writing agency with a 100% money back guarantee. Our policy thrives on the assurance that our custom writing services will always respond to your paper requirements. We acknowledge the challenges associated with buying custom papers and will ensure that you get value for your money.  You can buy any type of custom essay from the academicwriters.com cheaply and still have the guarantee of an A+ custom paper. 
 Theacademicwriters.com places emphasis on the quality of the agency's custom writing services and has a support team that works 24/7 to ensure that all custom essays align with the customer's essay help concerns. 
@@ -247,9 +250,9 @@ Theacademicwriters.com pricing strategy considers that most of our custom essay 
 
 <h4><em>Our Prices!</em></h4>
 When you buy a custom paper from theacademicwriters.com, you will get all the order details inclusive of the total price. Our strategy for pricing custom essays depends on the paper's urgency, academic level, type of spacing and number of pages. The variation in the charges for our custom writing services arises from the fact that we assign different levels and types of academic papers to writers who specialize in the specified fields. Our free custom writing services include plagiarism check, proofreading and editing of your custom essay. Theacademicwriters.com offers pocket-friendly yet professional custom writing services. Place an order today and experience a combination of quality, professionalism and fast turnaround at theacademicwriters.com
-
-<div>
-<span class="btn btn-large btn btn-default"><h2><%=link_to "Buy Custom Essay", order_now_path %></span></h2>
-</div>
+<%= render "layouts/footer" %>
+</td>
+</tr>
+</table>
 
 
