@@ -8,10 +8,10 @@ color: #5B7A7A;
 background-color: white;
 font-family: Verdana, "Times New Roman", Times, serif;
 font-size: small;
-margin: 3%;
+margin: 2%;
 width: 90%;
 padding-right: 3%;
-line-height: 1.8em;
+line-height: 2em;
 border: 2px thin solid;
 border-radius: 15px;
 }
@@ -29,8 +29,9 @@ color: brown;
 
 nav {
   color: #fff;
-margin: 10px 10px 0px 10px;
-margin-bottom: 3%;
+  margin-left: 1.5%;
+  padding-left: 0.5%;
+margin-bottom: 1%;
 }
 nav ul {
 margin: 0px;
@@ -54,11 +55,14 @@ color: black;
 
 #elixirs{
 width: 25%;
-float: left;
 text-align: center;
 line-height: 1;
 margin: 0.5%;
 padding: 2%;
+}
+#main{
+	margin-left: 2%;
+	font-size: small;
 }
 #elixirs h2 {
 color: black;
@@ -127,7 +131,7 @@ footer {
 color: brown;
 text-align: center;
 padding: 15px;
-font-size: 90%;
+font-size: small;
 clear: left;
 margin-top: 5%;
 padding-left: 15%;
